@@ -1,5 +1,5 @@
 ---
-
+import LanguageDropdown from "@/components/LanguageDropdown.astro";
 ---
 
 <nav class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full px-4">
@@ -26,11 +26,14 @@
       <li><a href="#proyectos" class="hover:text-gray-100 transition">Proyectos</a></li>
       <li><a href="#stack" class="hover:text-gray-100 transition">Stack</a></li>
       <li><a href="#contacto" class="hover:text-gray-100 transition">Contacto</a></li>
-      <li><a href="#contacto" class="hover:text-gray-100 transition">ES</a></li>
     </ul>
 
     <!-- Right controls -->
     <div class="flex items-center gap-3">
+
+      <div>
+        <LanguageDropdown />
+      </div>
 
       <!-- Theme toggle -->
       <div
