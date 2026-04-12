@@ -1,21 +1,71 @@
 ---
-const languages = [
-  { code: 'es', label: 'Español' },
-  { code: 'en', label: 'English' },
-  { code: 'fr', label: 'Français' }
-];
+
 ---
 
-<div class="lang">
-  <span>ES</span>
+<div class="relative inline-block w-full sm:w-auto">
+    <!-- BOTÓN -->
+    <button id="dropdownBtn"
+        aria-expanded="false"
+        class="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow ring-1 ring-white/10 hover:bg-zinc-800 transition">
+        ES
+        <svg class="w-4 h-4 transition-transform text-zinc-400" id="arrowIcon" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"/>
+        </svg>
+    </button>
+    <!-- MENÚ -->
+    <div id="dropdownMenu"
+        class="absolute sm:right-0 mt-2 w-full sm:w-40 origin-top rounded-xl bg-zinc-900 shadow-xl ring-1 ring-white/10 opacity-0 scale-95 pointer-events-none transition-all duration-150">
+        <div class="py-2">
+            <button class="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md transition">
+            Español
+            </button>
+            <button class="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md transition">
+            Euskera
+            </button>
+            <button class="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md transition">
+            English
+            </button>
+        </div>
+    </div>
 </div>
 
-<style>
+<script is:inline>
 
-  .lang {
-    background-color: grey;
-    padding: 5px 8px 5px 8px;
-    border-radius: 100%;
-  }
+    const btnn = document.getElementById("dropdownBtn");
+    const menuu = document.getElementById("dropdownMenu");
+    const arrow = document.getElementById("arrowIcon");
 
-</style>
+    let isOpen = false;
+
+    function openMenu() {
+        menuu.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+        menuu.classList.add("opacity-100", "scale-100");
+        arrow.classList.add("rotate-180");
+        btnn.setAttribute("aria-expanded", "true");
+        isOpen = true;
+    }
+
+    function closeMenu() {
+        menuu.classList.add("opacity-0", "scale-95", "pointer-events-none");
+        menuu.classList.remove("opacity-100", "scale-100");
+        arrow.classList.remove("rotate-180");
+        btnn.setAttribute("aria-expanded", "false");
+        isOpen = false;
+    }
+
+    btnn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        isOpen ? closeMenu() : openMenu();
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!btnn.contains(e.target) && !menuu.contains(e.target)) {
+            closeMenu();
+        }
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+    });
+
+</script>
