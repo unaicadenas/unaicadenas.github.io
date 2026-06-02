@@ -1,6 +1,7 @@
 ---
 import LinkedinIcon from "@/assets/icons/linkedin.svg";
 import GithubIcon from "@/assets/icons/github.svg";
+import ArrowIcon from "@/assets/icons/download-arrow.svg";
 ---
 
 <header class="h-screen">
@@ -24,8 +25,11 @@ import GithubIcon from "@/assets/icons/github.svg";
                     <a href="https://github.com/unaicadenas" target="_blank">
                         <GithubIcon class="size-10 text-white hover:scale-110 transition" />
                     </a>
-                    <a href="/" class="border border-white px-6 py-2 rounded-full hover:scale-110 transition">
-                        <span>Currículum</span>
+                    <a href="/" class="border border-(--primary-color) px-6 py-2 rounded-full hover:scale-110 transition">
+                        <div class="flex justify-center items-center">
+                            <ArrowIcon class="size-7 text-(--primary-color)" />
+                            <span class="text-(--primary-color)">Currículum Vitae</span>
+                        </div>
                     </a>
                 </div>
             </section>
