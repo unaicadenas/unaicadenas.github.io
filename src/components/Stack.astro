@@ -2,122 +2,55 @@
 
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 lg:grid-rows-5 gap-4">
-    <div class="stack-box reveal lg:col-span-2 lg:row-span-3">
-        <h5>Frontend</h5>
-    </div>
-
-    <div class="stack-box reveal lg:col-span-3 lg:row-span-2">
-        <h5>Backend</h5>
-    </div>
-
-    <div class="stack-box reveal lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-4">
-        <h5>Base de datos</h5>
-    </div>
-
-    <div class="stack-box reveal lg:row-span-3 lg:col-start-3 lg:row-start-3">
-        <h5>Herramientas</h5>
-    </div>
-
-    <div class="stack-box reveal lg:col-span-2 lg:row-span-3 lg:col-start-4 lg:row-start-3">
-        <h5>Otros</h5>
-    </div>
-</div>
-
-<!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 lg:grid-rows-5 gap-4">
-    
-    <div class="stack-box lg:col-span-2 lg:row-span-3">
-        <h5 class="mb-4 text-lg font-medium">Frontend</h5>
-
-        <div class="flex flex-wrap items-center gap-4">
-            <div class="h-12 w-12 rounded-lg bg-white"></div>
-            <div class="h-12 w-12 rounded-lg bg-white"></div>
-        </div>
-    </div>
-
-    <div class="stack-box lg:col-span-3 lg:row-span-2">
-        <h5 class="text-lg font-medium">Backend</h5>
-    </div>
-
-    <div class="stack-box lg:col-span-2 lg:row-span-2 lg:col-start-1 lg:row-start-4">
-        <h5 class="text-lg font-medium">Base de datos</h5>
-    </div>
-
-    <div class="stack-box lg:row-span-3 lg:col-start-3 lg:row-start-3">
-        <h5 class="text-lg font-medium">Herramientas</h5>
-    </div>
-
-    <div class="stack-box lg:col-span-2 lg:row-span-3 lg:col-start-4 lg:row-start-3">
-        <h5 class="text-lg font-medium">Otros</h5>
-    </div>
-
-</div> -->
-
-<!-- <div class="stack grid grid-cols-5 grid-rows-5 gap-4">
+<div class="stack grid grid-cols-5 grid-rows-5 gap-4">
     <div class="stack-box col-span-2 row-span-3">
-        <h5>Frontend</h5>
-        <div class="flex flex-wrap justify-start items-center p-6 gap-6">
-            <div class="h-12 w-12 bg-white"></div>
-            <div class="h-12 w-12 bg-white"></div>
+        <h2>🖥️ Frontend</h2>
+        <div class="flex flex-wrap justify-start items-center gap-4">
+            <div class="h-10 w-10 bg-white"></div>
+            <div class="h-10 w-10 bg-white"></div>
         </div>
     </div>
     <div class="stack-box col-span-3 row-span-2 col-start-3">
-        <h5>Backend</h5>
+        <h2>🧠 Backend</h2>
+        <div class="flex flex-wrap justify-start items-center gap-4">
+            <div class="h-10 w-10 bg-white"></div>
+            <div class="h-10 w-10 bg-white"></div>
+        </div>
     </div>
     <div class="stack-box col-span-2 row-span-2 col-start-1 row-start-4">
-        <h5>Base de datos</h5>
+        <h2>🗄️ Base de datos</h2>
+        <div class="flex flex-wrap justify-start items-center gap-4">
+            <div class="h-10 w-10 bg-white"></div>
+            <div class="h-10 w-10 bg-white"></div>
+        </div>
     </div>
     <div class="stack-box row-span-3 col-start-3 row-start-3">
-        <h5>Herramientas</h5>
+        <h2>🎨 Diseño</h2>
+        <div class="flex flex-wrap justify-start items-center gap-4">
+            <div class="h-10 w-10 bg-white"></div>
+            <div class="h-10 w-10 bg-white"></div>
+        </div>
     </div>
     <div class="stack-box col-span-2 row-span-3 col-start-4 row-start-3">
-        <h5>Otros</h5>
+        <h2>🛠️ Herramientas</h2>
+        <div class="flex flex-wrap justify-start items-center gap-4">
+            <div class="h-10 w-10 bg-white"></div>
+            <div class="h-10 w-10 bg-white"></div>
+        </div>
     </div>
-</div> -->
-
-<script is:inline>
-    const cards = document.querySelectorAll(".reveal");
-
-    cards.forEach((card, index) => {
-        card.style.transitionDelay = `${index * 120}ms`;
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-        });
-    });
-
-    cards.forEach((card) => observer.observe(card));
-</script>
+</div>
 
 <style>
 
-    /*.stack-box {
-        border: 1px solid white;
-        border-radius: 10px;
-    }*/
-
-    /*.stack-box {
-        border: 1px solid rgb(255 255 255 / 0.15);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        min-height: 180px;
-    }*/
-
-    .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition:
-            opacity 0.8s ease,
-            transform 0.8s ease;
+    .stack h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
     }
 
-    .reveal.show {
-        opacity: 1;
-        transform: translateY(0);
+    .stack-box {
+        border: 1px solid rgb(255 255 255 / 0.15);
+        border-radius: 28px;
+        padding: 24px;
     }
 
 </style>
