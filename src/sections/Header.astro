@@ -8,9 +8,12 @@ import ArrowIcon from "@/assets/icons/download-arrow.svg";
     <div class="px-4 scroll-m-20 w-full mx-auto container lg:max-w-6xl md:max-w-4xl">
         <div class="h-screen flex justify-between items-center gap-20">
             <section class="text-center">
-                <h1 class="text-6xl text-white">Hi, I am Unai Cadenas</h1>
-                <h2 class="text-3xl font-bold text-(--primary-color) mt-5">FULL STACK WEB DEVELOPER</h2>
-                <h4 class="text-2xl mt-10">
+                <div class="flex flex-col justify-center items-center">
+                    <h1 class="text-6xl font-bold text-white">Hi, I am <span class="text-green-400">Unai Cadenas</span></h1>
+                    <div class="mt-10 mb-6 h-1 w-40 bg-white"></div>
+                    <h2 class="text-3xl font-bold text-blue-400">FULL STACK WEB DEVELOPER</h2>
+                </div>
+                <h4 class="text-2xl mt-6">
                     Apasionado del
                     <span class="text-(--primary-color) font-semibold">desarrollo frontend</span>
                     . Disfruto creando interfaces
@@ -19,17 +22,17 @@ import ArrowIcon from "@/assets/icons/download-arrow.svg";
                     de usuario y el detalle visual.
                 </h4>
                 <div class="mt-8 w-full flex justify-center items-center gap-6">
+                    <a href="/" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
+                        <div class="flex justify-center items-center">
+                            <ArrowIcon class="size-7 text-(--primary-color)" />
+                            <span class="text-(--primary-color) font-bold">CV</span>
+                        </div>
+                    </a>
                     <a href="https://es.linkedin.com/in/unaicadenas" target="_blank">
                         <LinkedinIcon class="size-10 text-white hover:scale-110 transition" />
                     </a>
                     <a href="https://github.com/unaicadenas" target="_blank">
                         <GithubIcon class="size-10 text-white hover:scale-110 transition" />
-                    </a>
-                    <a href="/" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
-                        <div class="flex justify-center items-center">
-                            <ArrowIcon class="size-7 text-(--primary-color)" />
-                            <span class="text-(--primary-color)">Currículum Vitae</span>
-                        </div>
                     </a>
                 </div>
             </section>
