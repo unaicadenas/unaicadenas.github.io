@@ -1,137 +1,74 @@
 ---
-
+// Stack.astro
+// Componente de Stack Tecnológico estilo Bento con Tailwind CSS
 ---
 
-<!--
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 
-<div class="stack grid grid-cols-6 grid-rows-4 gap-4">
-    <div class="col-span-3 row-span-2 bg-white/5 border border-white/10">
-        <h2>Frontend</h2>
-    </div>
-    <div class="col-span-3 row-span-2 col-start-4 bg-white/5 border border-white/10">
-        <h2>Backend</h2>
-    </div>
-    <div class="col-span-2 row-span-2 row-start-3 bg-white/5 border border-white/10">
-        <h2>Base de Datos</h2>
-    </div>
-    <div class="col-span-2 row-span-2 col-start-3 row-start-3 bg-white/5 border border-white/10">
-        <h2>Herramientas</h2>
-    </div>
-    <div class="col-span-2 row-span-2 col-start-5 row-start-3 bg-white/5 border border-white/10">
-        <h2>Diseño</h2>
-    </div>
-</div>
-
-<style>
-    .stack div {
-        border-radius: 28px;
-        padding: 10px;
-    }
-    .stack div h2 {
-        margin-bottom: 60px;
-    }
-</style>
-
--->
-
-
-
-
-<section>
+<section class="w-full max-w-6xl mx-auto p-4">
   
-  {/* Bento Grid usando columnas fraccionadas en 6 para emular la estructura de la imagen */}
   <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
     
-    {/* 1. Frontend (Ocupa 3 de 6 columnas en pantallas medianas/grandes) */}
-    <div class="md:col-span-3 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] flex flex-col justify-between min-h-45">
+    <div class="md:col-span-3 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 flex flex-col justify-between min-h-50">
       <div>
-        <h3 class="text-lg font-semibold text-white/90 mb-4 tracking-wide">Frontend</h3>
+        <h3 class="text-xl font-semibold text-white mb-2">Frontend</h3>
+        <p class="text-sm text-gray-400 mb-6">Creando interfaces de usuario interactivas, responsivas y optimizadas.</p>
       </div>
-      <div class="flex flex-wrap gap-2.5">
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22h20L12 2z"/></svg>
-          Astro
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
-          React
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-sky-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z"/></svg>
-          Tailwind CSS
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h4v10M13 7h4"/></svg>
-          TypeScript
-        </div>
+      <div class="flex flex-wrap gap-4 text-4xl text-gray-300">
+        <i class="devicon-html5-plain colored transition-transform hover:scale-110" title="HTML5"></i>
+        <i class="devicon-css3-plain colored transition-transform hover:scale-110" title="CSS3"></i>
+        <i class="devicon-javascript-plain colored transition-transform hover:scale-110" title="JavaScript"></i>
+        <i class="devicon-typescript-plain colored transition-transform hover:scale-110" title="TypeScript"></i>
+        <i class="devicon-react-original colored transition-transform hover:scale-110" title="React"></i>
+        <i class="devicon-astro-plain colored transition-transform hover:scale-110" title="Astro"></i>
+        <i class="devicon-tailwindcss-plain colored transition-transform hover:scale-110" title="Tailwind CSS"></i>
       </div>
     </div>
 
-    {/* 2. Backend (Ocupa 3 de 6 columnas) */}
-    <div class="md:col-span-3 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] flex flex-col justify-between min-h-45">
+    <div class="md:col-span-3 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 flex flex-col justify-between min-h-50">
       <div>
-        <h3 class="text-lg font-semibold text-white/90 mb-4 tracking-wide">Backend</h3>
+        <h3 class="text-xl font-semibold text-white mb-2">Backend</h3>
+        <p class="text-sm text-gray-400 mb-6">Desarrollo de lógica de servidor sólida, APIs REST y microservicios.</p>
       </div>
-      <div class="flex flex-wrap gap-2.5">
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          Node.js
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m10 15 5-5"/></svg>
-          Python
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-neutral-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/></svg>
-          Express
-        </div>
+      <div class="flex flex-wrap gap-4 text-4xl text-gray-300">
+        <i class="devicon-nodejs-plain colored transition-transform hover:scale-110" title="Node.js"></i>
+        <i class="devicon-express-original transition-transform hover:scale-110" title="Express"></i>
+        <i class="devicon-python-plain colored transition-transform hover:scale-110" title="Python"></i>
+        <i class="devicon-java-plain colored transition-transform hover:scale-110" title="Java"></i>
       </div>
     </div>
 
-    {/* 3. Base de Datos (Ocupa 2 de 6 columnas) */}
-    <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] flex flex-col justify-between min-h-40">
+    <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 flex flex-col justify-between min-h-45">
       <div>
-        <h3 class="text-lg font-semibold text-white/90 mb-4 tracking-wide">Base de Datos</h3>
+        <h3 class="text-lg font-semibold text-white mb-2">Base de Datos</h3>
+        <p class="text-xs text-gray-400 mb-4">Modelado de datos eficientes y persistencia segura.</p>
       </div>
-      <div class="flex flex-wrap gap-2.5">
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-          PostgreSQL
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c1.5 4 3.5 7.5 3.5 11a3.5 3.5 0 0 1-7 0c0-3.5 2-7 3.5-11z"/></svg>
-          MongoDB
-        </div>
+      <div class="flex flex-wrap gap-4 text-3xl text-gray-300">
+        <i class="devicon-postgresql-plain colored transition-transform hover:scale-110" title="PostgreSQL"></i>
+        <i class="devicon-mongodb-plain colored transition-transform hover:scale-110" title="MongoDB"></i>
+        <i class="devicon-mysql-plain colored transition-transform hover:scale-110" title="MySQL"></i>
       </div>
     </div>
 
-    {/* 4. Herramientas (Ocupa 2 de 6 columnas) */}
-    <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] flex flex-col justify-between min-h-40">
+    <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 flex flex-col justify-between min-h-45">
       <div>
-        <h3 class="text-lg font-semibold text-white/90 mb-4 tracking-wide">Herramientas</h3>
+        <h3 class="text-lg font-semibold text-white mb-2">Herramientas</h3>
+        <p class="text-xs text-gray-400 mb-4">Control de versiones, despliegue y automatización.</p>
       </div>
-      <div class="flex flex-wrap gap-2.5">
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-orange-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M6 9v6M9 9l3 3"/></svg>
-          Git
-        </div>
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-          Docker
-        </div>
+      <div class="flex flex-wrap gap-4 text-3xl text-gray-300">
+        <i class="devicon-git-plain colored transition-transform hover:scale-110" title="Git"></i>
+        <i class="devicon-github-original transition-transform hover:scale-110" title="GitHub"></i>
+        <i class="devicon-docker-plain colored transition-transform hover:scale-110" title="Docker"></i>
       </div>
     </div>
 
-    {/* 5. Diseño (Ocupa 2 de 6 columnas) */}
-    <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] flex flex-col justify-between min-h-40">
+    <div class="md:col-span-2 bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-white/20 hover:bg-white/10 flex flex-col justify-between min-h-45">
       <div>
-        <h3 class="text-lg font-semibold text-white/90 mb-4 tracking-wide">Diseño</h3>
+        <h3 class="text-lg font-semibold text-white mb-2">Diseño</h3>
+        <p class="text-xs text-gray-400 mb-4">Planificación visual, prototipado y experiencia de usuario.</p>
       </div>
-      <div class="flex flex-wrap gap-2.5">
-        <div class="flex items-center gap-2 bg-white/5 border border-white/5 px-3 py-1.5 rounded-xl text-xs font-medium text-white/80">
-          <svg class="w-4 h-4 text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/></svg>
-          Figma
-        </div>
+      <div class="flex flex-wrap gap-4 text-3xl text-gray-300">
+        <i class="devicon-figma-plain colored transition-transform hover:scale-110" title="Figma"></i>
       </div>
     </div>
 
