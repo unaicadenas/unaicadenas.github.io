@@ -1,71 +1,112 @@
 ---
 
+import esFlag from "@/assets/flags/es.svg";
+import euFlag from "@/assets/flags/eu.svg";
+import enFlag from "@/assets/flags/en.svg";
+
+// Definimos la estructura de los idiomas con sus respectivas rutas de iconos
+const languages = [
+    { code: 'es', name: 'Español', flag: esFlag },
+    { code: 'eu', name: 'Euskera', flag: euFlag },
+    { code: 'en', name: 'English', flag: enFlag }
+];
+
+// Idioma por defecto
+const currentLanguage = languages[0];
+
 ---
 
-<div class="relative inline-block w-full sm:w-auto">
-    <!-- BOTÓN -->
-    <button id="dropdownBtn"
+<div class="relative inline-block text-left w-full sm:w-auto text-gray-700 dark:text-gray-200" id="language-dropdown-container">
+    <button
+        type="button"
+        class="inline-flex items-center justify-between sm:justify-center gap-x-1 w-full sm:w-auto px-4 py-2.5 text-sm font-medium shadow-sm transition-all duration-200"
+        id="dropdown-button"
         aria-expanded="false"
-        class="w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-lg bg-zinc-900 px-4 py-2 text-sm font-semibold text-white shadow ring-1 ring-white/10 hover:bg-zinc-800 transition">
-        ES
-        <svg class="w-4 h-4 transition-transform text-zinc-400" id="arrowIcon" viewBox="0 0 20 20" fill="currentColor">
-            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"/>
+        aria-haspopup="true"
+    >
+        <div class="flex items-center gap-3 sm:gap-2">
+            <img
+                src={currentLanguage.flag.src}
+                alt={currentLanguage.name}
+                class="w-5 h-5 rounded-full object-cover border border-gray-100 dark:border-zinc-700 shrink-0"
+            />
+            <span class="block truncate uppercase text-white">{currentLanguage.code}</span>
+        </div>
+        <svg class="h-5 w-5 text-gray-400 transition-transform duration-200" id="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
         </svg>
     </button>
-    <!-- MENÚ -->
-    <div id="dropdownMenu"
-        class="absolute sm:right-0 mt-2 w-full sm:w-40 origin-top rounded-xl bg-zinc-900 shadow-xl ring-1 ring-white/10 opacity-0 scale-95 pointer-events-none transition-all duration-150">
-        <div class="py-2">
-            <button class="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md transition">
-            Español
-            </button>
-            <button class="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md transition">
-            Euskera
-            </button>
-            <button class="w-full text-left px-4 py-2 text-sm text-zinc-300 hover:bg-zinc-800 hover:text-white rounded-md transition">
-            English
-            </button>
+    <div
+        class="hidden absolute right-0 z-50 mt-2 w-full sm:w-48 origin-top-right rounded-xl bg-white dark:bg-zinc-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transform scale-95 opacity-0 transition-all duration-200"
+        id="dropdown-menu"
+        role="menu"
+        aria-orientation="vertical"
+        aria-labelledby="dropdown-button"
+    >
+        <div class="py-1 p-1" role="none">
+            {languages.map((lang) => (
+            <a
+                href={`/${lang.code}`} 
+                class="flex items-center gap-3 px-4 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-150 group"
+                role="menuitem"
+            >
+                <img 
+                    src={lang.flag.src} 
+                    alt={lang.name} 
+                    class="w-5 h-5 rounded-full object-cover border border-gray-100 dark:border-zinc-700 shrink-0 group-hover:scale-105 transition-transform"
+                />
+                <span class={`${lang.code === currentLanguage.code ? 'font-semibold text-indigo-600 dark:text-indigo-400' : 'font-normal'}`}>
+                    {lang.name}
+                </span>
+            </a>
+            ))}
         </div>
     </div>
 </div>
 
-<script is:inline>
+<script>
 
-    const btnn = document.getElementById("dropdownBtn");
-    const menuu = document.getElementById("dropdownMenu");
-    const arrow = document.getElementById("arrowIcon");
+    // Lógica en el cliente para abrir/cerrar el dropdown de forma accesible
+    const container = document.getElementById('language-dropdown-container');
+    const button = document.getElementById('dropdown-button');
+    const menu = document.getElementById('dropdown-menu');
+    const chevron = document.getElementById('dropdown-chevron');
 
-    let isOpen = false;
-
-    function openMenu() {
-        menuu.classList.remove("opacity-0", "scale-95", "pointer-events-none");
-        menuu.classList.add("opacity-100", "scale-100");
-        arrow.classList.add("rotate-180");
-        btnn.setAttribute("aria-expanded", "true");
-        isOpen = true;
-    }
-
-    function closeMenu() {
-        menuu.classList.add("opacity-0", "scale-95", "pointer-events-none");
-        menuu.classList.remove("opacity-100", "scale-100");
-        arrow.classList.remove("rotate-180");
-        btnn.setAttribute("aria-expanded", "false");
-        isOpen = false;
-    }
-
-    btnn.addEventListener("click", (e) => {
+    if (button && menu && chevron) {
+        const toggleDropdown = () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', (!isExpanded).toString());
+      
+        if (isExpanded) {
+            // Cerrar
+            menu.classList.add('hidden', 'scale-95', 'opacity-0');
+            menu.classList.remove('scale-100', 'opacity-100');
+            chevron.classList.remove('rotate-180');
+            } else {
+                // Abrir
+                menu.classList.remove('hidden');
+                // Pequeño timeout para que la transición de Tailwind funcione al quitar 'hidden'
+                setTimeout(() => {
+                    menu.classList.remove('scale-95', 'opacity-0');
+                    menu.classList.add('scale-100', 'opacity-100');
+                }, 10);
+                chevron.classList.add('rotate-180');
+            }
+        };
+        button.addEventListener('click', (e) => {
         e.stopPropagation();
-        isOpen ? closeMenu() : openMenu();
+        toggleDropdown();
     });
 
-    document.addEventListener("click", (e) => {
-        if (!btnn.contains(e.target) && !menuu.contains(e.target)) {
-            closeMenu();
+    // Cerrar si se hace clic fuera del dropdown
+    document.addEventListener('click', (e) => {
+        if (container && !container.contains(e.target as Node)) {
+            button.setAttribute('aria-expanded', 'false');
+            menu.classList.add('hidden', 'scale-95', 'opacity-0');
+            menu.classList.remove('scale-100', 'opacity-100');
+            chevron.classList.remove('rotate-180');
         }
     });
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeMenu();
-    });
+}
 
 </script>
