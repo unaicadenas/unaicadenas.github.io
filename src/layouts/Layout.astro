@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="bg-white text-black dark:bg-black dark:text-white">
+	<body class="text-black dark:text-white">
 		<Navbar />
 		<slot />
 		<Footer />
@@ -32,18 +32,21 @@ const { title } = Astro.props;
 		--primary-color: #4ddf9e;
 	}
 	html {
-		/*
 		background:
-			radial-gradient(circle at center, rgba(34,197,94,0.4), transparent 80%),
-			radial-gradient(circle at center, rgba(56,189,248,0.4), transparent 95%),
-			linear-gradient(180deg, #020617, #0f172a);
-		*/
-		/*background: radial-gradient(circle at top, #0f2027, #0b1320);*/
-
-		/*background: oklch(21% 0.034 264.665);*/ /* Estee */
-
-		/*background-position: center;
-		background-repeat: no-repeat;*/
+			radial-gradient(circle at 15% 20%, rgba(77, 223, 158, 0.15) 0%, transparent 30%),
+			radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 35%),
+			radial-gradient(circle at 50% 80%, rgba(96, 165, 250, 0.1) 0%, transparent 40%),
+			linear-gradient(135deg,#f8fafc 0%,#eef6ff 50%,#f0fdf4 100%
+		);
+	}
+	.dark {
+		background:
+			radial-gradient(circle at 20% 20%, rgba(77, 223, 158, 0.15) 0%, transparent 30%),
+			radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.18) 0%, transparent 35%),
+			radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
+			linear-gradient(135deg,#020617 0%,#0f172a 45%,#111827 100%
+		);
+		/*background: oklch(21% 0.034 264.665);*/
 	}
 	body {
 		margin: 0;

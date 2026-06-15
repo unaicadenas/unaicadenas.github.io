@@ -1,6 +1,9 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 
+import SectionContainer from "@/components/SectionContainer.astro";
+import TitleSection from "@/components/TitleSection.astro";
+
 import Header from "@/sections/Header.astro";
 import AboutMe from "@/sections/AboutMe.astro";
 import WorkExperience from "@/sections/WorkExperience.astro";
@@ -9,34 +12,38 @@ import Stack from "@/sections/Stack.astro";
 import Contact from "@/sections/Contact.astro";
 ---
 
-<Layout title="Portfolio Unai Cadenas - Desarrollador full stack web">
+<Layout title="Portfolio Unai Cadenas - Desarrollador Web Full Stack">
 
-	<!-- HEADER -->
-	<Header />
+	<main class="px-4">
 
-	<div id="sobre-mi"></div>
-	
-	<div class="space-y-30 px-4 scroll-m-20 w-full mx-auto container lg:max-w-6xl md:max-w-4xl">
+		<Header />
 
-		<!-- Sobre mi mejorado -->
-		<AboutMe />
+		<div class="space-y-24">
 
-		<!-- Experiencia laboral -->
-		<div id="experiencia"></div>
-		<WorkExperience />
-		
-		<!-- Proyectos -->
-		<div id="proyectos"></div>
-		<Projects />
+			<!-- Sobre mi -->
+			<SectionContainer id="sobre-mi">
+				<TitleSection>
+					Sobre mí
+				</TitleSection>
+				<AboutMe/>
+			</SectionContainer>
 
-		<!-- Stack Tecnologico -->
-		<div id="stack"></div>
-		<Stack />
+			<!-- Experiencia laboral -->
 
-		<!-- Contacto -->
-		<div id="contacto"></div>
-		<Contact />
+			<!-- Proyectos -->
 
-	</div>
+			<!-- Stack Tecnologico -->
+
+			<!-- Contacto -->
+			<SectionContainer id="contacto">
+				<TitleSection>
+					Contacto
+				</TitleSection>
+				<Contact/>
+			</SectionContainer>
+
+		</div>
+
+	</main>
 
 </Layout>
