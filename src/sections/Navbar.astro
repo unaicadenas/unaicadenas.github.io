@@ -9,13 +9,15 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
         <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
             <a href="#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a>
             <a href="#experiencia" class="hover:text-white transition-colors">Experiencia</a>
-            <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a>
+            <!-- <a href="#proyectos" class="hover:text-white transition-colors">Proyectos</a> -->
             <a href="#stack" class="hover:text-white transition-colors">Stack</a>
             <a href="#contacto" class="hover:text-white transition-colors">Contacto</a>
         </nav>
         <div class="flex items-center gap-4">
-            <LanguageDropdown />
-            <ThemeToggle />
+            <div class="hidden md:flex justify-center items-center">
+                <LanguageDropdown />
+                <ThemeToggle />
+            </div>
             <button id="menu-toggle" class="md:hidden p-1 text-slate-400 hover:text-white focus:outline-none transition-colors" aria-label="Abrir menú">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -25,7 +27,7 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
     </div>
     <div id="mobile-menu" class="fixed inset-y-0 left-0 z-50 w-full max-w-xs bg-slate-900/95 backdrop-blur-lg border-r border-slate-800 p-6 flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl">
         <div>
-            <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center justify-between mb-6">
                 <span class="text-xl font-bold tracking-wider text-white">UCQ<span class="text-indigo-500">.</span></span>
                 <button id="menu-close" class="p-1 text-slate-400 hover:text-white transition-colors" aria-label="Cerrar menú">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
@@ -33,6 +35,7 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
                     </svg>
                 </button>
             </div>
+            <hr class="mb-6 text-white">
             <nav class="flex flex-col gap-5 text-lg font-medium">
                 <a href="#sobre-mi" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Sobre mí</a>
                 <a href="#experiencia" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Experiencia</a>
@@ -40,8 +43,11 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
                 <a href="#stack" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Stack</a>
                 <a href="#contacto" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Contacto</a>
             </nav>
+            <div class="flex flex-col justify-center items-center mt-4 text-white">
+                <span>ThemeToggle</span>
+                <span>LanguageDropdown</span>
+            </div>
         </div>
-        <div class="text-xs text-slate-500 text-center border-t border-slate-800/60 pt-4">&copy; 2026 UCQ. Todos los derechos reservados.</div>
     </div>
     <div id="menu-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden md:hidden opacity-0 transition-opacity duration-300"></div>
 </header>

@@ -32,21 +32,24 @@ const { title } = Astro.props;
 		--primary-color: #4ddf9e;
 	}
 	html {
-		background:
-			radial-gradient(circle at 15% 20%, rgba(77, 223, 158, 0.15) 0%, transparent 30%),
-			radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 35%),
-			radial-gradient(circle at 50% 80%, rgba(96, 165, 250, 0.1) 0%, transparent 40%),
-			linear-gradient(135deg,#f8fafc 0%,#eef6ff 50%,#f0fdf4 100%
-		);
+		background-color: #f0f4f8;
+		background-image: 
+			radial-gradient(at 10% 20%, rgba(77, 223, 158, 0.28) 0px, transparent 55%),
+			radial-gradient(at 90% 10%, rgba(0, 102, 255, 0.22) 0px, transparent 60%),
+			radial-gradient(at 50% 80%, rgba(0, 221, 255, 0.18) 0px, transparent 50%);
+		background-attachment: fixed;
+		color: #0f172a;
+		transition: background 0.5s ease, color 0.5s ease;
 	}
 	.dark {
-		background:
-			radial-gradient(circle at 20% 20%, rgba(77, 223, 158, 0.15) 0%, transparent 30%),
-			radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.18) 0%, transparent 35%),
-			radial-gradient(circle at 50% 90%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
-			linear-gradient(135deg,#020617 0%,#0f172a 45%,#111827 100%
-		);
-		/*background: oklch(21% 0.034 264.665);*/
+		background-color: #070b13;
+		background-image:
+			radial-gradient(at 5% 15%, rgba(77, 223, 158, 0.18) 0px, transparent 50%),
+			radial-gradient(at 95% 15%, rgba(29, 78, 216, 0.45) 0px, transparent 60%),
+			radial-gradient(at 50% 85%, rgba(2, 132, 199, 0.3) 0px, transparent 55%);
+		background-attachment: fixed;
+		color: #f8fafc;
+		animation: ambientPulse 12s ease-in-out infinite alternate;
 	}
 	body {
 		margin: 0;
