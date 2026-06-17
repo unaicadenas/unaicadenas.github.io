@@ -4,76 +4,45 @@ import GithubIcon from "@/assets/icons/github.svg";
 import ArrowIcon from "@/assets/icons/download-arrow.svg";
 ---
 
-<header class="h-screen">
-    <div class="px-4 scroll-m-20 w-full mx-auto container lg:max-w-6xl md:max-w-4xl">
-        <div class="h-screen flex flex-col md:flex-row justify-between items-center gap-20">
-            <section class="text-center">
-                <div class="flex flex-col justify-center items-center">
-                    <h1 class="text-5xl font-bold text-black dark:text-white">Hi, I am <span class="text-green-500 dark:text-green-400">Unai Cadenas</span></h1>
-                    <div class="mt-10 mb-6 h-1 w-40 bg-black dark:bg-white"></div>
-                    <h2 class="text-2xl font-bold text-blue-400">FULL STACK WEB DEVELOPERR</h2>
+<div class="h-[calc(100vh-100px)] flex flex-col md:flex-row justify-between items-center gap-4">
+    <!-- Left -->
+    <div class="flex flex-col justify-center items-center">
+        <h1 class="text-5xl font-bold text-black dark:text-white">Hi, I am <span class="text-green-500 dark:text-green-400">Unai Cadenas</span></h1>
+        <div class="mt-10 mb-6 h-1 w-40 bg-black dark:bg-white"></div>
+        <h2 class="text-2xl font-bold text-blue-400">FULL STACK WEB DEVELOPER</h2>
+        <h4 class="text-center text-xl mt-6">
+            Apasionado del
+            <span class="text-(--primary-color) font-semibold">desarrollo frontend</span>
+            . Disfruto creando interfaces
+            <span class="text-(--primary-color) font-semibold">simples, modernas y funcionales,</span>
+            cuidando la experiencia de usuario y el detalle visual.
+        </h4>
+        <div class="flex flex-row gap-3 mt-4">
+            <a href="https://es.linkedin.com/in/unaicadenas" target="_blank" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
+                <div class="flex justify-center items-center gap-2">
+                    <LinkedinIcon class="size-6 text-(--primary-color)" />
+                    <span class="text-(--primary-color) font-semibold">LinkedIn</span>
                 </div>
-                <h4 class="text-xl mt-6">
-                    Apasionado del
-                    <span class="text-(--primary-color) font-semibold">desarrollo frontend</span>
-                    . Disfruto creando interfaces
-                    <span class="text-(--primary-color) font-semibold">simples, modernas y funcionales,</span>
-                    cuidando la experiencia
-                    de usuario y el detalle visual.
-                </h4>
-                <div class="mt-8 w-full flex justify-center items-center gap-6">
-                    <!-- 
-                    <a href="https://es.linkedin.com/in/unaicadenas" target="_blank">
-                        <LinkedinIcon class="size-10 text-black dark:text-white hover:scale-110 transition" />
-                    </a>
-                    <a href="https://github.com/unaicadenas" target="_blank">
-                        <GithubIcon class="size-10 text-black dark:text-white hover:scale-110 transition" />
-                    </a>
-                    -->
-                    <!-- 
-                    <a href="/" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
-                        <div class="flex justify-center items-center">
-                            <ArrowIcon class="size-7 text-(--primary-color)" />
-                            <span class="text-(--primary-color) font-bold">CV</span>
-                        </div>
-                    </a>
-                    -->
-                    <a href="https://es.linkedin.com/in/unaicadenas" target="_blank" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
-                        <div class="flex justify-center items-center gap-2">
-                            <LinkedinIcon class="size-6 text-(--primary-color)" />
-                            <span class="text-(--primary-color) font-semibold">LinkedIn</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/unaicadenas" target="_blank" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
-                        <div class="flex justify-center items-center gap-2">
-                            <GithubIcon class="size-6 text-(--primary-color)" />
-                            <span class="text-(--primary-color) font-semibold">GitHub</span>
-                        </div>
-                    </a>
+            </a>
+            <a href="https://github.com/unaicadenas" target="_blank" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
+                <div class="flex justify-center items-center gap-2">
+                    <GithubIcon class="size-6 text-(--primary-color)" />
+                    <span class="text-(--primary-color) font-semibold">GitHub</span>
                 </div>
-            </section>
-            <section class="flex justify-center items-center">
-                <img src="/header-image.webp" alt="Imagen portfolio">
-            </section>
+            </a>
         </div>
     </div>
-</header>
-
-<style>
-
-    /*header {
-        background-color: white;
-    }
-    .dark body header {
-        background:
-            linear-gradient(
-            to bottom,
-            transparent 40%,
-            oklch(21% 0.034 264.665) 100%
-            ),
-            radial-gradient(circle at 50% 50%, rgba(56,189,248,0.18), transparent 85%),
-            radial-gradient(circle at 50% 50%, rgba(34,197,94,0.15), transparent 90%),
-            linear-gradient(180deg, #020617, #0f172a);
-    }*/
-
-</style>
+    <!-- Right -->
+    <div class="hidden md:flex h-full min-w-100 justify-center items-center">
+        <img
+            class="w-full max-w-lg h-auto object-contain"
+            src="/header-image.webp"
+            alt="Imagen portfolio"
+        >
+    </div>
+    <img
+        class="md:hidden absolute inset-0 w-full h-full object-contain opacity-40"
+        src="/header-image.webp"
+        alt="Imagen portfolio"
+    >
+</div>
