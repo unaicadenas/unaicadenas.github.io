@@ -4,30 +4,34 @@ import GithubIcon from "@/assets/icons/github.svg";
 import ArrowIcon from "@/assets/icons/download-arrow.svg";
 ---
 
-<div class="h-[calc(100vh-100px)] flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="hero h-[calc(100vh-100px)] flex flex-col md:flex-row justify-between items-center gap-4">
     <!-- Left -->
-    <div class="flex flex-col justify-center items-center">
-        <h1 class="text-5xl font-bold text-black dark:text-white">Hi, I am <span class="text-green-500 dark:text-green-400">Unai Cadenas</span></h1>
-        <div class="mt-10 mb-6 h-1 w-40 bg-black dark:bg-white"></div>
-        <h2 class="text-2xl font-bold text-blue-400">FULL STACK WEB DEVELOPER</h2>
-        <h4 class="text-center text-xl mt-6">
+    <div class="flex flex-col justify-start">
+        <h1 class="text-7xl font-bold text-black dark:text-white">
+            <!-- <span>Hi, I am</span><br> -->
+            <span>Hey, soy</span><br>
+            <span class="text-green-500 dark:text-green-400">Unai Cadenas</span>
+        </h1>
+        <!-- <div class="mt-10 mb-6 h-1 w-40 bg-black dark:bg-white"></div> -->
+        <h2 class="text-2xl font-bold text-blue-400 mt-10">FULL STACK WEB DEVELOPER</h2>
+        <h4 class="text-xl mt-6">
             Apasionado del
-            <span class="text-(--primary-color) font-semibold">desarrollo frontend</span>
-            . Disfruto creando interfaces
+            <span class="text-(--primary-color) font-semibold">desarrollo frontend.</span>
+            Disfruto creando interfaces
             <span class="text-(--primary-color) font-semibold">simples, modernas y funcionales,</span>
             cuidando la experiencia de usuario y el detalle visual.
         </h4>
-        <div class="flex flex-row gap-3 mt-4">
-            <a href="https://es.linkedin.com/in/unaicadenas" target="_blank" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
+        <div class="flex flex-row gap-3 mt-6">
+            <a href="https://es.linkedin.com/in/unaicadenas" target="_blank" class="border border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black px-4 py-2 rounded-full">
                 <div class="flex justify-center items-center gap-2">
-                    <LinkedinIcon class="size-6 text-(--primary-color)" />
-                    <span class="text-(--primary-color) font-semibold">LinkedIn</span>
+                    <LinkedinIcon class="size-6" />
+                    <span class="font-semibold">LinkedIn</span>
                 </div>
             </a>
-            <a href="https://github.com/unaicadenas" target="_blank" class="border border-(--primary-color) px-4 py-2 rounded-full hover:scale-110 transition">
+            <a href="https://github.com/unaicadenas" target="_blank" class="border border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black px-4 py-2 rounded-full">
                 <div class="flex justify-center items-center gap-2">
-                    <GithubIcon class="size-6 text-(--primary-color)" />
-                    <span class="text-(--primary-color) font-semibold">GitHub</span>
+                    <GithubIcon class="size-6" />
+                    <span class="font-semibold">GitHub</span>
                 </div>
             </a>
         </div>
@@ -40,9 +44,11 @@ import ArrowIcon from "@/assets/icons/download-arrow.svg";
             alt="Imagen portfolio"
         >
     </div>
-    <img
-        class="md:hidden absolute inset-0 w-full h-full object-contain opacity-40"
-        src="/header-image.webp"
-        alt="Imagen portfolio"
-    >
+    <div class="md:hidden absolute inset-0 flex justify-center items-center">
+        <img
+            class="w-full h-full object-contain opacity-40"
+            src="/header-image.webp"
+            alt="Imagen portfolio"
+        >
+    </div>
 </div>
