@@ -39,7 +39,6 @@ const navItems = [
         </nav>
         <div class="flex items-center gap-4">
             <div class="flex justify-center items-center">
-                <LanguageDropdown />
                 <ThemeToggle />
             </div>
             <button id="menu-toggle" class="md:hidden p-1 text-slate-400 hover:text-white focus:outline-none transition-colors" aria-label="Abrir menú">
@@ -61,11 +60,16 @@ const navItems = [
             </div>
             <hr class="mb-6 text-white">
             <nav class="flex flex-col gap-5 text-lg font-medium">
-                <a href="#sobre-mi" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Sobre mí</a>
-                <a href="#experiencia" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Experiencia</a>
-                <a href="#proyectos" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Proyectos</a>
-                <a href="#stack" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Stack</a>
-                <a href="#contacto" class="mobile-link text-slate-300 hover:text-white py-1 transition-colors">Contacto</a>
+                {
+                    navItems.map((link) => (
+                        <a
+                            class="mobile-link text-slate-300 hover:text-white py-1 transition-colors"
+                            href={link.url}
+                        >
+                            {link.title}
+                        </a>
+                    ))
+                }
             </nav>
             <!-- 
             <div class="flex flex-col justify-center items-center mt-4 text-white">
