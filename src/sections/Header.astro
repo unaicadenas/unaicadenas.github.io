@@ -1,54 +1,61 @@
 ---
 import LinkedinIcon from "@/assets/icons/linkedin.svg";
 import GithubIcon from "@/assets/icons/github.svg";
-import ArrowIcon from "@/assets/icons/download-arrow.svg";
+
+import SocialButton from "@/components/SocialButton.astro";
 ---
 
-<div class="hero h-[calc(100vh-100px)] flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="h-[calc(100vh-100px)] flex flex-col-reverse md:flex-row justify-between items-center gap-4">
     <!-- Left -->
-    <div class="flex flex-col justify-start">
-        <h1 class="text-7xl font-bold text-black dark:text-white">
+    <div class="flex flex-col">
+        <h2 class="text-2xl font-bold text-blue-500 mb-5">FULL STACK WEB & APP DEVELOPER</h2>
+        <h1 class="text-7xl font-bold text-gray-800 dark:text-gray-100">
             <!-- <span>Hi, I am</span><br> -->
-            <span>Hey, soy</span><br>
-            <span class="bg-linear-to-r from-[#2A7B9B] to-[#57C785] bg-clip-text text-transparent">Unai Cadenas</span>
+            <span class="block mb-2">Hey, soy</span>
+            <span class="block bg-linear-to-r from-[#0097B2] to-[#7ED957] bg-clip-text text-transparent">
+                &gt; Unai Cadenas
+            </span>
         </h1>
-        <!-- <div class="mt-10 mb-6 h-1 w-40 bg-black dark:bg-white"></div> -->
-        <h2 class="text-2xl font-bold text-blue-400 mt-10">FULL STACK WEB DEVELOPER</h2>
-        <h4 class="text-xl mt-6">
-            Apasionado del
-            <span class="text-(--primary-color) font-semibold">desarrollo frontend.</span>
-            Disfruto creando interfaces
-            <span class="text-(--primary-color) font-semibold">simples, modernas y funcionales,</span>
-            cuidando la experiencia de usuario y el detalle visual.
+        <h4 class="text-xl mt-6 text-gray-700 dark:text-gray-200">
+            Especializado en
+            <span class="text-(--primary-color) dark:text-(--primary-color-dark) font-semibold">crear sitios web y apps modernos</span>,
+            optimizados y adaptados a las necesidades de cada proyecto.
         </h4>
         <div class="flex flex-row gap-3 mt-6">
-            <a href="https://es.linkedin.com/in/unaicadenas" target="_blank" class="border border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black px-4 py-2 rounded-full">
-                <div class="flex justify-center items-center gap-2">
-                    <LinkedinIcon class="size-6" />
-                    <span class="font-semibold">LinkedIn</span>
-                </div>
-            </a>
-            <a href="https://github.com/unaicadenas" target="_blank" class="border border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black px-4 py-2 rounded-full">
-                <div class="flex justify-center items-center gap-2">
-                    <GithubIcon class="size-6" />
-                    <span class="font-semibold">GitHub</span>
-                </div>
-            </a>
+            <SocialButton href="https://es.linkedin.com/in/unaicadenas">
+                <LinkedinIcon class="size-6" />
+                <span class="font-semibold">LinkedIn</span>
+            </SocialButton>
+            <SocialButton href="https://github.com/unaicadenas">
+                <GithubIcon class="size-6" />
+                <span class="font-semibold">GitHub</span>
+            </SocialButton>
         </div>
     </div>
     <!-- Right -->
-    <div class="hidden md:flex h-full min-w-100 justify-center items-center">
-        <img
-            class="w-full max-w-lg h-auto object-contain [mask-:linear-gradient(to_bottom,black_50%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]"
-            src="/header-image.webp"
-            alt="Imagen portfolio"
-        >
-    </div>
-    <div class="md:hidden absolute inset-0 flex justify-center items-center">
-        <img
-            class="w-full h-full object-contain opacity-40 -z-10 [mask-:linear-gradient(to_bottom,black_50%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_50%,transparent_100%)]"
-            src="/header-image.webp"
-            alt="Imagen portfolio"
-        >
+    <div class="hidden md:flex justify-center items-center">
+        <div class="relative max-w-125 h-full">
+            <svg
+                viewBox="0 0 800 900"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-0 h-full w-full size-full"
+            >
+                <!-- Forma verde -->
+                <path
+                    d="M40 70 Q40 20 90 20 L270 20 Q320 20 300 70 L170 480 Q150 530 100 530 Q60 530 55 480 Z"
+                    fill="#8FD28A"
+                />
+                <!-- Forma azul -->
+                <path
+                    d="M350 30 Q370 0 420 10 L730 80 Q790 90 790 140 L790 840 Q790 880 750 880 L110 880 Q60 880 85 820 Z"
+                    fill="#8FA0E8"
+                />
+            </svg>
+            <img
+                class="relative z-10 object-contain"
+                src="/header-image.webp"
+                alt="Imagen portfolio"
+            >
+        </div>
     </div>
 </div>
