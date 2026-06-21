@@ -5,9 +5,9 @@ import GithubIcon from "@/assets/icons/github.svg";
 import SocialButton from "@/components/SocialButton.astro";
 ---
 
-<div class="h-[calc(100vh-100px)] flex flex-col-reverse md:flex-row justify-between items-center gap-4">
+<div class="h-[calc(100vh-100px)] flex flex-col md:flex-row gap-4">
     <!-- Left -->
-    <div class="flex flex-col">
+    <div class="flex flex-col justify-center">
         <h2 class="text-2xl font-bold text-blue-500 mb-5">FULL STACK WEB & APP DEVELOPER</h2>
         <h1 class="text-7xl font-bold text-gray-800 dark:text-gray-100">
             <!-- <span>Hi, I am</span><br> -->
@@ -34,25 +34,20 @@ import SocialButton from "@/components/SocialButton.astro";
     </div>
     <!-- Right -->
     <div class="hidden md:flex justify-center items-center">
-        <div class="relative max-w-125 h-full">
+        <div class="relative min-w-120 h-full flex justify-end items-center">
             <svg
-                viewBox="0 0 800 900"
                 xmlns="http://www.w3.org/2000/svg"
-                class="absolute inset-0 h-full w-full size-full"
+                viewBox="0 0 630 742"
+                fill="none"
+                class="absolute h-full w-full inset-0 -z-10"
             >
-                <!-- Forma verde -->
                 <path
-                    d="M40 70 Q40 20 90 20 L270 20 Q320 20 300 70 L170 480 Q150 530 100 530 Q60 530 55 480 Z"
-                    fill="#8FD28A"
-                />
-                <!-- Forma azul -->
-                <path
-                    d="M350 30 Q370 0 420 10 L730 80 Q790 90 790 140 L790 840 Q790 880 750 880 L110 880 Q60 880 85 820 Z"
-                    fill="#8FA0E8"
+                    fill="#97A6FF"
+                    d="M290 18 C312 18 334 24 355 29 C421 43 487 57 552 72 C586 80 604 93 604 123 L604 685 C604 708 592 721 574 723 L47 723 C33 723 24 717 25 702 L244 52 C252 30 268 18 290 18 Z"
                 />
             </svg>
             <img
-                class="relative z-10 object-contain"
+                class="relative h-125 z-10 object-contain mr-5"
                 src="/header-image.webp"
                 alt="Imagen portfolio"
             >
