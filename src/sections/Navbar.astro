@@ -24,7 +24,7 @@ const navItems = [
 
 <header class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8">
     <div class="max-w-7xl mx-auto flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 rounded-full py-3 px-6 text-slate-200 shadow-lg">
-        <a href="/" class="text-xl font-bold tracking-wider text-white hover:text-indigo-400 transition-colors">UCQ</a>
+        <a href="/" class="text-3xl font-bold tracking-wider text-white hover:text-indigo-400 transition-colors">&lt;UCQ/&gt;</a>
         <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
             {
                 navItems.map((link) => (
@@ -51,14 +51,14 @@ const navItems = [
     <div id="mobile-menu" class="fixed inset-y-0 left-0 z-50 w-full max-w-xs bg-slate-900/95 backdrop-blur-lg border-r border-slate-800 p-6 flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl">
         <div>
             <div class="flex items-center justify-between mb-6">
-                <span class="text-xl font-bold tracking-wider text-white">UCQ<span class="text-indigo-500">.</span></span>
+                <span class="text-2xl font-bold tracking-wider text-white">&lt;UCQ/&gt;</span>
                 <button id="menu-close" class="p-1 text-slate-400 hover:text-white transition-colors" aria-label="Cerrar menú">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
-            <hr class="mb-6 text-white">
+            <hr class="mb-8 text-white">
             <nav class="flex flex-col gap-5 text-lg font-medium">
                 {
                     navItems.map((link) => (
