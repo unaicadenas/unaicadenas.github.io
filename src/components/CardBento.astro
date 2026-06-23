@@ -1,0 +1,14 @@
+---
+const { className, title } = Astro.props;
+---
+
+<div class={`${className ?? ""} border rounded-2xl p-6 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between min-h-40 shadow-sm
+            bg-slate-50 border-slate-200 hover:bg-blue-50/50 hover:border-blue-200
+            dark:bg-white/5 dark:border-white/10 hover:dark:border-white/20 hover:dark:bg-white/10`}>
+    <div>
+        <h3 class="text-2xl font-semibold text-(--primary-color) dark:text-(--primary-color-dark) mb-2">&gt; {title}</h3>
+    </div>
+    <div class="flex flex-wrap gap-4 text-4xl text-gray-300">
+        <slot />
+    </div>
+</div>
