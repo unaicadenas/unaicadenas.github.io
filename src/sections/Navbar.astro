@@ -23,8 +23,8 @@ const navItems = [
 ---
 
 <header class="fixed top-4 left-0 right-0 z-50 px-4 md:px-8">
-    <div class="max-w-7xl mx-auto flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 rounded-full py-3 px-6 text-slate-200 shadow-lg">
-        <a href="/" class="text-3xl font-bold tracking-wider text-white hover:text-indigo-400 transition-colors">&lt;UCQ/&gt;</a>
+    <div class="header-nav max-w-7xl mx-auto flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 rounded-full py-3 px-6 text-slate-900 dark:text-slate-200 shadow-lg">
+        <a href="/" class="text-3xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ/&gt;</a>
         <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
             {
                 navItems.map((link) => (
@@ -75,6 +75,58 @@ const navItems = [
     </div>
     <div id="menu-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden md:hidden opacity-0 transition-opacity duration-300"></div>
 </header>
+
+<style>
+
+    .header-nav {
+        animation: nav-appear 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+    }
+
+    .dark body header .header-nav {
+        animation: nav-appear-dark 1s linear both;
+        animation-timeline: scroll();
+        animation-range: 0 100px;
+    }
+
+    .header-nav {
+        background-color: rgb(255 255 255 / 0.6);
+    }
+
+    .dark body header .header-nav {
+        background-color: rgb(17 24 39 / 0.8);
+    }
+
+    @keyframes nav-appear {
+        0% {
+            background-color: transparent;
+            border-color: transparent;
+            box-shadow: none;
+        }
+        to {
+            box-shadow: 0 0 0 1px rgb(255 255 255 / 0.1), 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgb(229 231 235 / 0.2);
+        }
+    }
+
+    @keyframes nav-appear-dark {
+        0% {
+            background-color: rgb(17 24 39 / 0);
+            border-color: transparent;
+            box-shadow: none;
+        }
+        to {
+            box-shadow: 0 0 0 1px rgb(255 255 255 / 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgb(255 255 255 / 0.05);
+        }
+    }
+
+</style>
 
 <script>
 
