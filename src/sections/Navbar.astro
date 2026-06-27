@@ -23,7 +23,7 @@ const navItems = [
 ---
 
 <header class="fixed top-4 left-0 right-0 z-50 px-4">
-    <div class="header-nav w-full mx-auto container lg:max-w-6xl md:max-w-4xl rounded-full py-3 px-6 shadow-lg flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 text-slate-900 dark:text-slate-200">
+    <div class="header-nav w-full mx-auto container lg:max-w-7xl md:max-w-4xl rounded-full py-3 px-6 shadow-lg flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 text-slate-900 dark:text-slate-200">
         <a href="/" class="text-3xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ/&gt;</a>
         <div>
             <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
@@ -37,7 +37,8 @@ const navItems = [
                         </a>
                     ))
                 }
-                <div class="pl-6 border-l border-gray-300/30 dark:border-white/10">
+                <div class="flex justify-center items-center gap-4 pl-6 border-l border-gray-300/30 dark:border-white/10">
+                    <LanguageDropdown/>
                     <ThemeToggle />
                 </div>
             </nav>
