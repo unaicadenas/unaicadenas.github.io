@@ -37,10 +37,6 @@ const navItems = [
                         </a>
                     ))
                 }
-                <div class="flex justify-center items-center gap-4 pl-6 border-l border-gray-300/30 dark:border-white/10">
-                    <LanguageDropdown/>
-                    <ThemeToggle />
-                </div>
             </nav>
             <div class="flex items-center">
                 <button id="menu-toggle" class="md:hidden p-1 text-slate-400 hover:text-white focus:outline-none transition-colors" aria-label="Abrir menú">
@@ -49,6 +45,10 @@ const navItems = [
                     </svg>
                 </button>
             </div>
+        </div>
+        <div class="hidden md:flex justify-center items-center gap-4">
+            <LanguageDropdown/>
+            <ThemeToggle />
         </div>
     </div>
     <div id="mobile-menu" class="fixed inset-y-0 left-0 z-50 w-full max-w-xs bg-slate-900/95 backdrop-blur-lg border-r border-slate-800 p-6 flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl">
