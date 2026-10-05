@@ -3,29 +3,19 @@ import LanguageDropdown from "@/components/LanguageDropdown.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 
 const navItems = [
-    {
-        title: "Sobre mí", url: "/#sobre-mi",
-    },
-    {
-        title: "Experiencia", url: "/#experiencia",
-    },
-    /* {
-        title: "Proyectos", url: "/#proyectos",
-    }, */
-    {
-        title: "Stack", url: "/#stack",
-    },
-    {
-        title: "Contacto", url: "/#contacto",
-    }
+    { title: "Sobre mí", url: "/#sobre-mi" },
+    { title: "Experiencia", url: "/#experiencia" },
+    /* { title: "Proyectos", url: "/#proyectos" }, */
+    { title: "Stack", url: "/#stack" },
+    { title: "Contacto", url: "/#contacto" }
 ]
 ---
 
 <header class="fixed w-full z-50">
-    <div class="header-nav w-full py-5 px-8 md:px-20 shadow-lg flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 text-slate-900 dark:text-slate-200">
+    <div class="header-nav w-full py-5 px-8 md:px-40 shadow-lg flex items-center justify-between bg-slate-900/70 backdrop-blur-md border border-slate-700/50 text-slate-900 dark:text-slate-200">
         <a href="/" class="text-4xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ/&gt;</a>
         <div>
-            <nav class="hidden md:flex items-center gap-6 lg:gap-10">
+            <nav class="hidden md:flex items-center gap-10 lg:gap-14">
                 {
                     navItems.map((link) => (
                         <a
