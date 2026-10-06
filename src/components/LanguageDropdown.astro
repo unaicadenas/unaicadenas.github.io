@@ -1,5 +1,4 @@
 ---
-
 import esFlag from "@/assets/flags/es.svg";
 import euFlag from "@/assets/flags/eu.svg";
 import enFlag from "@/assets/flags/en.svg";
@@ -11,58 +10,35 @@ const languages = [
 ];
 
 // Idioma por defecto
-const currentLanguage = languages[0];
-
+const currentLanguage = languages[1];
 ---
 
-<div class="relative inline-block text-left w-full sm:w-auto text-gray-700 dark:text-gray-200" id="language-dropdown-container">
+<div class="relative">
     <button
-        type="button"
-        class="inline-flex items-center justify-between sm:justify-center gap-x-1 w-full sm:w-auto text-sm font-medium transition-all duration-200"
+        transition:persist
         id="dropdown-button"
-        aria-expanded="false"
-        aria-haspopup="true"
+        class="flex hover:scale-125 transition"
     >
-        <div class="flex items-center gap-3 sm:gap-2">
-            <img
-                src={currentLanguage.flag.src}
-                alt={currentLanguage.name}
-                class="w-5 h-5 rounded-full object-cover border border-gray-100 dark:border-zinc-700 shrink-0"
-            />
-            <!-- 
-            <span class="block truncate uppercase text-white">{currentLanguage.code}</span>
-            -->
-        </div>
-        <svg class="h-5 w-5 text-gray-400 transition-transform duration-200" id="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-        </svg>
+        <img src={currentLanguage.flag.src} alt={currentLanguage.name} class="size-5 rounded-full" />
     </button>
+    <!-- 
     <div
-        class="hidden absolute right-0 z-50 mt-2 w-full sm:w-48 origin-top-right rounded-xl bg-white dark:bg-zinc-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transform scale-95 opacity-0 transition-all duration-200"
+        transition:persist
         id="dropdown-menu"
-        role="menu"
-        aria-orientation="vertical"
-        aria-labelledby="dropdown-button"
+        class="absolute hidden scale-80 top-6 -right-2 p-2 min-w-32 rounded-xl border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
     >
-        <div class="py-1 p-1" role="none">
-            {languages.map((lang) => (
-            <a
-                href={`/${lang.code}`} 
-                class="flex items-center gap-3 px-4 py-2 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors duration-150 group"
-                role="menuitem"
-            >
-                <img 
-                    src={lang.flag.src} 
-                    alt={lang.name} 
-                    class="w-5 h-5 rounded-full object-cover border border-gray-100 dark:border-zinc-700 shrink-0 group-hover:scale-105 transition-transform"
-                />
-                <span class={`${lang.code === currentLanguage.code ? 'font-semibold text-indigo-600 dark:text-indigo-400' : 'font-normal'}`}>
-                    {lang.name}
-                </span>
-            </a>
-            ))}
-        </div>
+        <ul>
+            {
+                languages.map((lang) => (
+                    <li class="themes-menu-option px-2 py-1.5 cursor-default text-black dark:text-white hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-md">
+                        <img src={lang.flag.src} alt={lang.name} class="size-3 rounded-full">
+                        <span>{lang.name}</span>
+                    </li>
+                ))
+            }
+        </ul>
     </div>
+    -->
 </div>
 
 <script>

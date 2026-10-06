@@ -21,7 +21,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="text-black dark:text-white min-h-screen bg-slate-100 dark:bg-slate-900 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[6rem_4rem]">
+	<body class="text-black dark:text-white min-h-screen bg-[#f5f8f6] dark:bg-slate-900 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[6rem_4rem]">
 		<div class="absolute inset-0 -z-10 h-full w-full">
 			<div class="absolute bottom-auto left-auto right-0 top-0 h-125 w-125 -translate-x-[30%] translate-y-[20%] rounded-full bg-blue-400 opacity-50 blur-[80px]"></div>
 		</div>
@@ -35,26 +35,6 @@ const { title } = Astro.props;
 	:root {
 		--primary-color: #0f9d69;
 		--primary-color-dark: #4ddf9e;
-	}
-	html {
-		/*background-color: #f0f4f8;
-		background-image: 
-			radial-gradient(at 10% 20%, rgba(77, 223, 158, 0.28) 0px, transparent 55%),
-			radial-gradient(at 90% 10%, rgba(0, 102, 255, 0.22) 0px, transparent 60%),
-			radial-gradient(at 50% 80%, rgba(0, 221, 255, 0.18) 0px, transparent 50%);
-		background-attachment: fixed;
-		color: #0f172a;
-		transition: background 0.5s ease, color 0.5s ease;*/
-	}
-	.dark {
-		/*background-color: #070b13;
-		background-image:
-			radial-gradient(at 5% 15%, rgba(77, 223, 158, 0.18) 0px, transparent 50%),
-			radial-gradient(at 95% 15%, rgba(29, 78, 216, 0.45) 0px, transparent 60%),
-			radial-gradient(at 50% 85%, rgba(2, 132, 199, 0.3) 0px, transparent 55%);
-		background-attachment: fixed;
-		color: #f8fafc;
-		animation: ambientPulse 12s ease-in-out infinite alternate;*/
 	}
 	body {
 		font-family: 'Onest Variable', sans-serif;
