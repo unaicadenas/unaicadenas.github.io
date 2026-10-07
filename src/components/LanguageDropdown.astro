@@ -4,86 +4,102 @@ import euFlag from "@/assets/flags/eu.svg";
 import enFlag from "@/assets/flags/en.svg";
 
 const languages = [
-    { code: 'es', name: 'Español', flag: esFlag },
-    { code: 'eu', name: 'Euskera', flag: euFlag },
-    { code: 'en', name: 'English', flag: enFlag }
+    { code: 'es', name: 'Español', flag: esFlag.src },
+    { code: 'eu', name: 'Euskera', flag: euFlag.src },
+    { code: 'en', name: 'English', flag: enFlag.src }
 ];
 
 // Idioma por defecto
-const currentLanguage = languages[1];
+const currentLanguage = languages[0];
 ---
 
 <div class="relative">
     <button
-        transition:persist
-        id="dropdown-button"
+        id="lang-button"
         class="flex hover:scale-125 transition"
     >
-        <img src={currentLanguage.flag.src} alt={currentLanguage.name} class="size-5 rounded-full" />
+        <img
+            id="lang-flag"
+            src={currentLanguage.flag}
+            alt={currentLanguage.name}
+            class="size-5 rounded-full"
+        />
     </button>
-    <!-- 
     <div
-        transition:persist
-        id="dropdown-menu"
-        class="absolute hidden scale-80 top-6 -right-2 p-2 min-w-32 rounded-xl border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+        id="lang-menu"
+        class="absolute hidden scale-80 top-6 -right-4 p-2 min-w-40 rounded-xl border border-gray-100 bg-white dark:bg-gray-900 dark:border-gray-500 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
     >
         <ul>
             {
-                languages.map((lang) => (
-                    <li class="themes-menu-option px-2 py-1.5 cursor-default text-black dark:text-white hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-md">
-                        <img src={lang.flag.src} alt={lang.name} class="size-3 rounded-full">
+                languages.map((lang)=>(
+                    <li
+                        class="flex gap-2 lang-menu-option px-2 py-1.5 cursor-default text-black dark:text-white hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-md"
+                        data-code={lang.code}
+                        data-name={lang.name}
+                        data-flag={lang.flag}
+                    >
+                        <img src={lang.flag} alt={lang.name} class="size-5 rounded-full">
                         <span>{lang.name}</span>
                     </li>
                 ))
             }
         </ul>
     </div>
-    -->
 </div>
+
+<style>
+    #lang-menu.open {
+        display: inline;
+        animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    }
+
+    @keyframes scale-up-center {
+        from {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+</style>
 
 <script>
 
-    // Lógica en el cliente para abrir/cerrar el dropdown de forma accesible
-    const container = document.getElementById('language-dropdown-container');
-    const button = document.getElementById('dropdown-button');
-    const menu = document.getElementById('dropdown-menu');
-    const chevron = document.getElementById('dropdown-chevron');
+    const button = document.querySelector("#lang-button");
+    const menu = document.querySelector("#lang-menu");
+    const flag = document.querySelector("#lang-flag");
 
-    if (button && menu && chevron) {
-        const toggleDropdown = () => {
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', (!isExpanded).toString());
-      
-        if (isExpanded) {
-            // Cerrar
-            menu.classList.add('hidden', 'scale-95', 'opacity-0');
-            menu.classList.remove('scale-100', 'opacity-100');
-            chevron.classList.remove('rotate-180');
-            } else {
-                // Abrir
-                menu.classList.remove('hidden');
-                // Pequeño timeout para que la transición de Tailwind funcione al quitar 'hidden'
-                setTimeout(() => {
-                    menu.classList.remove('scale-95', 'opacity-0');
-                    menu.classList.add('scale-100', 'opacity-100');
-                }, 10);
-                chevron.classList.add('rotate-180');
+    // Abrir / cerrar el menú
+    button?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        menu?.classList.toggle("open");
+    });
+    
+    // Seleccionar idioma
+    document.querySelectorAll(".lang-menu-option").forEach((option) => {
+        option.addEventListener("click", () => {
+            const selectedFlag = option.getAttribute("data-flag");
+            const selectedName = option.getAttribute("data-name");
+            if (selectedFlag && flag) {
+                flag.setAttribute("src", selectedFlag);
+                flag.setAttribute("alt", selectedName || "");
             }
-        };
-        button.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleDropdown();
+            // Cerrar el menú
+            menu?.classList.remove("open");
+        });
     });
-
-    // Cerrar si se hace clic fuera del dropdown
-    document.addEventListener('click', (e) => {
-        if (container && !container.contains(e.target as Node)) {
-            button.setAttribute('aria-expanded', 'false');
-            menu.classList.add('hidden', 'scale-95', 'opacity-0');
-            menu.classList.remove('scale-100', 'opacity-100');
-            chevron.classList.remove('rotate-180');
-        }
+    
+    // Cerrar al hacer click fuera
+    document.addEventListener("click", () => {
+        menu?.classList.remove("open");
     });
-}
+    
+    // Evitar cerrar al hacer click dentro del menú
+    menu?.addEventListener("click", (event) => {
+        event.stopPropagation();
+    });
 
 </script>
