@@ -3,6 +3,7 @@
 ---
 
 <article class="flex flex-col md:flex-row justify-between items-center gap-16">
+	<!-- Texto sobre mi -->
 	<div class="text-left space-y-6">
 		<p>
 			Hola, soy Unai Cadenas, <span class="font-semibold text-(--primary-color) dark:text-(--primary-color-dark)">desarrollador web
@@ -25,19 +26,27 @@
 			sino que también transmitan una identidad visual sólida y memorable.
 		</p>
 	</div>
-	<div>
-		<div class="bg-white dark:bg-gray-800 rounded-lg px-6 py-8 ring shadow-xl ring-gray-900/5">
-			<div>
-				<span class="inline-flex items-center justify-center rounded-md bg-indigo-500 p-2 shadow-lg">
-					<svg class="h-6 w-6 stroke-white" ...>
-						<!-- ... -->
-					</svg>
-				</span>
+	<!-- Consola sobre mi -->
+	<div class="bg-[#1e1e1e] rounded-xl shadow-xl min-w-90">
+		<div class="flex items-center h-9 px-4 bg-[#2d2d2d] rounded-t-xl">
+			<div class="flex gap-1">
+				<div class="size-3 rounded-full bg-[#ff5f56]"></div>
+				<div class="size-3 rounded-full bg-[#ffbd2e]"></div>
+				<div class="size-3 rounded-full bg-[#27c93f]"></div>
 			</div>
-			<h3 class="text-gray-900 dark:text-white mt-5 text-base font-medium tracking-tight ">Writes upside-down</h3>
-			<p class="text-gray-500 dark:text-gray-400 mt-2 text-sm ">
-				The Zero Gravity Pen can be used to write in any orientation, including upside-down. It even works in outer space.
-			</p>
+			<div class="flex ml-18">
+				<span class="text-slate-200 text-sm">about-me.js</span>
+			</div>
+		</div>
+		<div class="flex flex-col px-8 py-6 text-white text-sm">
+			<span><span class="text-blue-400">const</span> developer = &#123;</span>
+			<div class="flex flex-col ml-6">
+				<span>name: <span class="text-(--primary-color-dark)">"Unai Cadenas"</span>,</span>
+				<span>role: <span class="text-(--primary-color-dark)">"Web Developer"</span>,</span>
+				<span>focus: [<span class="text-(--primary-color-dark)">"Frontend", "Backend", "UI/UX"</span>],</span>
+				<span>coffee: <span class="text-amber-600 italic">true</span></span>
+			</div>
+			<span>&#125;;</span>
 		</div>
 	</div>
 </article>
