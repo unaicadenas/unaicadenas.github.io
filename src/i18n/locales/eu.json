@@ -1,0 +1,18 @@
+{
+    "nav": {
+        "aboutme": "Niri buruz",
+        "experience": "Esperientzia",
+        "projects": "Proiektuak",
+        "stack": "Stack",
+        "contact": "Kontaktua"
+    },
+    "hero": {
+        "greeting": "Kaixo, Unai Cadenas naiz",
+        "role": "Full Stack web garatzailea",
+        "description": "Interfaze moderno, sinple eta funtzionalak sortzea gustatzen zait.",
+        "button": "Ikusi proiektuak"
+    },
+    "about": {
+        "title": "Niri buruz"
+    }
+}

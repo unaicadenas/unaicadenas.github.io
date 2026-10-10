@@ -1,0 +1,15 @@
+---
+import App from "@/app/App.astro";
+import type { Lang } from "@/i18n/ui";
+
+export function getStaticPaths() {
+    return [
+        { params: { lang: 'eu' } },
+        { params: { lang: 'en' } },
+    ];
+}
+
+const lang = Astro.params.lang as Lang;
+---
+
+<App lang={lang} />

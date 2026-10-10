@@ -1,0 +1,70 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+import SectionContainer from "@/components/SectionContainer.astro";
+import TitleSection from "@/components/TitleSection.astro";
+
+import Header from "@/sections/Header.astro";
+import AboutMe from "@/sections/AboutMe.astro";
+import Experience from "@/sections/Experience.astro";
+import Projects from "@/sections/Projects.astro";
+import Stack from "@/sections/Stack.astro";
+import Contact from "@/sections/Contact.astro";
+
+import { ui, type Lang } from '@/i18n/ui';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+---
+
+<Layout lang={lang} title="Portfolio Unai Cadenas - Desarrollador Web Full Stack">
+
+	<main class="px-4 pt-22">
+
+		<SectionContainer>
+			<Header />
+		</SectionContainer>
+
+		<div class="space-y-30 mt-24">
+
+			<!-- Sobre mi -->
+			<SectionContainer id="sobre-mi">
+				<TitleSection>{t.about.title}</TitleSection>
+				<AboutMe />
+			</SectionContainer>
+
+			<!-- Experiencia laboral -->
+			<SectionContainer id="experiencia">
+				<TitleSection>Experiencia Laboral</TitleSection>
+				<Experience />
+			</SectionContainer>
+
+			<!-- Proyectos -->
+			<!--
+			<SectionContainer id="proyectos">
+				<TitleSection>Proyectos</TitleSection>
+				<Projects />
+			</SectionContainer>
+			-->
+
+			<!-- Stack Tecnologico -->
+			<SectionContainer id="stack">
+				<TitleSection>Stack Tecnológico</TitleSection>
+				<Stack />
+			</SectionContainer>
+
+			<!-- Contacto -->
+			<SectionContainer id="contacto">
+				<TitleSection>Contacto</TitleSection>
+				<Contact />
+			</SectionContainer>
+
+		</div>
+
+	</main>
+
+</Layout>

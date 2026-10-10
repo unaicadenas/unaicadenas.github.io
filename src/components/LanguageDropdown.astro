@@ -3,19 +3,31 @@ import esFlag from "@/assets/flags/es.svg";
 import euFlag from "@/assets/flags/eu.svg";
 import enFlag from "@/assets/flags/en.svg";
 
+import type { Lang } from "@/i18n/ui";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+
 const languages = [
-    { code: 'es', name: 'Español', flag: esFlag.src },
-    { code: 'eu', name: 'Euskera', flag: euFlag.src },
-    { code: 'en', name: 'English', flag: enFlag.src }
+    { code: 'es', name: 'Español', flag: esFlag.src, href: '/' },
+    { code: 'eu', name: 'Euskera', flag: euFlag.src, href: '/eu' },
+    { code: 'en', name: 'English', flag: enFlag.src, href: '/en' }
 ];
 
-// Idioma por defecto
-const currentLanguage = languages[0];
+// Idioma actual según la URL
+const currentLanguage = languages.find((language) => language.code === lang) ?? languages[0];
 ---
 
 <div class="relative">
     <button
         id="lang-button"
+        type="button"
+        aria-label="Cambiar idioma"
+        aria-expanded="false"
+        aria-controls="lang-menu"
         class="flex hover:scale-125 transition"
     >
         <img
@@ -31,15 +43,19 @@ const currentLanguage = languages[0];
     >
         <ul>
             {
-                languages.map((lang)=>(
+                languages.map((language)=>(
                     <li
                         class="flex gap-2 lang-menu-option px-2 py-1.5 cursor-default text-black dark:text-white hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-md"
-                        data-code={lang.code}
-                        data-name={lang.name}
-                        data-flag={lang.flag}
+                        data-code={language.code}
+                        data-name={language.name}
+                        data-flag={language.flag}
+                        data-href={language.href}
+                        role="link"
+                        tabindex="0"
+                        aria-current={language.code === lang ? "page" : undefined}
                     >
-                        <img src={lang.flag} alt={lang.name} class="size-5 rounded-full">
-                        <span>{lang.name}</span>
+                        <img src={language.flag} alt={language.name} class="size-5 rounded-full">
+                        <span>{language.name}</span>
                     </li>
                 ))
             }
@@ -68,18 +84,72 @@ const currentLanguage = languages[0];
 
 <script>
 
-    const button = document.querySelector("#lang-button");
-    const menu = document.querySelector("#lang-menu");
-    const flag = document.querySelector("#lang-flag");
+    const button = document.querySelector<HTMLButtonElement>(
+        "#lang-button"
+    );
+
+    const menu = document.querySelector<HTMLDivElement>(
+        "#lang-menu"
+    );
 
     // Abrir / cerrar el menú
     button?.addEventListener("click", (event) => {
         event.stopPropagation();
-        menu?.classList.toggle("open");
+
+        const isOpen = menu?.classList.toggle("open") ?? false;
+
+        button.setAttribute("aria-expanded", String(isOpen));
     });
+
+    // Seleccionar idioma y navegar a su URL
+    document.querySelectorAll<HTMLLIElement>(
+        ".lang-menu-option"
+    ).forEach((option) => {
+        const selectLanguage = () => {
+            const href = option.dataset.href;
+
+            if (!href) return;
+
+            // Conservar el ancla de la sección actual, si existe
+            const hash = window.location.hash;
+
+            window.location.href = `${href}${hash}`;
+        };
+
+        option.addEventListener("click", selectLanguage);
+
+        // Permitir seleccionar con Enter o barra espaciadora
+        option.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                selectLanguage();
+            }
+        });
+    });
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", () => {
+        menu?.classList.remove("open");
+        button?.setAttribute("aria-expanded", "false");
+    });
+
+    // Evitar cerrar al hacer clic dentro del menú
+    menu?.addEventListener("click", (event) => {
+        event.stopPropagation();
+    });
+
+    /*const button = document.querySelector("#lang-button");
+    const menu = document.querySelector("#lang-menu");
+    const flag = document.querySelector("#lang-flag");*/
+
+    // Abrir / cerrar el menú
+    /*button?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        menu?.classList.toggle("open");
+    });*/
     
     // Seleccionar idioma
-    document.querySelectorAll(".lang-menu-option").forEach((option) => {
+    /*document.querySelectorAll(".lang-menu-option").forEach((option) => {
         option.addEventListener("click", () => {
             const selectedFlag = option.getAttribute("data-flag");
             const selectedName = option.getAttribute("data-name");
@@ -90,16 +160,16 @@ const currentLanguage = languages[0];
             // Cerrar el menú
             menu?.classList.remove("open");
         });
-    });
+    });*/
     
     // Cerrar al hacer click fuera
-    document.addEventListener("click", () => {
+    /*document.addEventListener("click", () => {
         menu?.classList.remove("open");
-    });
+    });*/
     
     // Evitar cerrar al hacer click dentro del menú
-    menu?.addEventListener("click", (event) => {
+    /*menu?.addEventListener("click", (event) => {
         event.stopPropagation();
-    });
+    });*/
 
 </script>

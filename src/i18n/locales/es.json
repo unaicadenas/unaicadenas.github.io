@@ -1,0 +1,18 @@
+{
+    "nav": {
+        "aboutme": "Sobre mí",
+        "experience": "Experiencia",
+        "projects": "Proyectos",
+        "stack": "Stack",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "greeting": "Hola, soy Unai Cadenas",
+        "role": "Desarrollador web Full Stack",
+        "description": "Me gusta crear interfaces modernas, sencillas y funcionales.",
+        "button": "Ver proyectos"
+    },
+    "about": {
+        "title": "Sobre mí"
+    }
+}

@@ -2,18 +2,29 @@
 import LanguageDropdown from "@/components/LanguageDropdown.astro";
 import ThemeToggle from "@/components/ThemeToggle.astro";
 
+import { ui, type Lang } from '@/i18n/ui';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
+
+const prefix = lang === "es" ? "" : `/${lang}`;
+
 const navItems = [
-    { title: "Sobre mí", url: "/#sobre-mi" },
-    { title: "Experiencia", url: "/#experiencia" },
-    /* { title: "Proyectos", url: "/#proyectos" }, */
-    { title: "Stack", url: "/#stack" },
-    { title: "Contacto", url: "/#contacto" }
+    { title: t.nav.aboutme, url: `${prefix}/#sobre-mi` },
+    { title: t.nav.experience, url: `${prefix}/#experiencia` },
+    /* { title: t.nav.projects, url: `${prefix}/#proyectos` }, */
+    { title: t.nav.stack, url: `${prefix}/#stack` },
+    { title: t.nav.contact, url: `${prefix}/#contacto` }
 ]
 ---
 
 <header class="fixed w-full z-50 top-0">
     <div class="header-nav w-full py-5 px-8 lg:px-20 shadow-lg flex items-center justify-between backdrop-blur-md bg-[#f5f8f6]/40 dark:bg-slate-900/40 text-slate-900 dark:text-slate-200">
-        <a href="/" class="text-3xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ<span class="text-(--primary-color) dark:text-(--primary-color-dark)">/</span>&gt;</a>
+        <a href={lang === "es" ? "/" : `/${lang}/`} class="text-3xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ<span class="text-(--primary-color) dark:text-(--primary-color-dark)">/</span>&gt;</a>
         <div class="flex items-center gap-6">
             <nav class="hidden md:flex items-center gap-6 lg:gap-10">
                 {
@@ -29,7 +40,7 @@ const navItems = [
             </nav>
             <div class="flex items-center gap-4 md:pl-6 md:border-l md:border-gray-400/40 md:dark:border-white/10">
                 <ThemeToggle />
-                <LanguageDropdown />
+                <LanguageDropdown lang={lang} />
             </div>
             <div class="flex md:hidden items-center">
                 <button id="menu-toggle" class="p-1 text-slate-800 hover:text-slate-900 dark:text-slate-200 dark:hover:text-slate-400 focus:outline-none transition-colors" aria-label="Abrir menú">
