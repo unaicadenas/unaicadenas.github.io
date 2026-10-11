@@ -7,12 +7,15 @@
         "contact": "Contact"
     },
         "hero": {
-        "greeting": "Hi, I am Unai Cadenas",
-        "role": "Full Stack Web Developer",
+        "greeting": "Hi, I am",
+        "role": "Full stack Web & app developer",
         "description": "I enjoy creating modern, simple and functional interfaces.",
         "button": "View projects"
     },
     "about": {
         "title": "About me"
+    },
+    "footer": {
+        "text": "Portfolio developed by Unai Cadenas. All rights reserved."
     }
 }

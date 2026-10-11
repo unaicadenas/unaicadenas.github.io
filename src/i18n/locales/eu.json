@@ -7,12 +7,15 @@
         "contact": "Kontaktua"
     },
     "hero": {
-        "greeting": "Kaixo, Unai Cadenas naiz",
-        "role": "Full Stack web garatzailea",
+        "greeting": "Kaixo,",
+        "role": "Full stack web eta app garatzailea",
         "description": "Interfaze moderno, sinple eta funtzionalak sortzea gustatzen zait.",
         "button": "Ikusi proiektuak"
     },
     "about": {
         "title": "Niri buruz"
+    },
+    "footer": {
+        "text": "Unai Cadenasek garatutako portfolioa. Eskubide guztiak erreserbatuta."
     }
 }
