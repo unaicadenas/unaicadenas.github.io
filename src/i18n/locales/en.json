@@ -9,11 +9,14 @@
         "hero": {
         "greeting": "Hi, I am",
         "role": "Full stack Web & app developer",
-        "description": "I enjoy creating modern, simple and functional interfaces.",
+        "description": "Specialized in creating modern, optimized websites and apps tailored to the needs of each project.",
         "button": "View projects"
     },
     "about": {
-        "title": "About me"
+        "title": "About me",
+        "text1": "I am a web developer passionate about creating modern, functional, and visually appealing digital experiences.",
+        "text2": "I enjoy combining development and design to build clean, dynamic interfaces tailored to each user's needs. Creativity is an essential part of my work, as I am always looking for new ways to solve problems and deliver value through innovative digital solutions.",
+        "text3": "I enjoy exploring new technologies, refining my skills, and taking on new challenges that allow me to continue growing as a developer. My goal is to create web products that not only work well but also convey a strong and memorable visual identity."
     },
     "footer": {
         "text": "Portfolio developed by Unai Cadenas. All rights reserved."

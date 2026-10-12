@@ -1,35 +1,45 @@
 ---
+import { ui, type Lang } from '@/i18n/ui';
 
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 ---
 
 <article class="flex flex-col md:flex-row justify-between items-center gap-16">
 	<!-- Texto sobre mi -->
 	<div class="text-left space-y-6">
-		<p class="text-2xl mb-10">
-			Soy <span class="font-semibold text-(--primary-color) dark:text-(--primary-color-dark)">desarrollador web</span>
-			apasionado por crear experiencias digitales modernas, funcionales y visualmente atractivas.
-		</p>
-		<p class="text-neutral-600 dark:text-neutral-300">
-			Me gusta combinar desarrollo y diseño para construir interfaces limpias, dinámicas y adaptadas
-			a las necesidades de cada usuario. La creatividad es una parte fundamental de mi trabajo, ya
-			que siempre busco nuevas formas de resolver problemas y aportar valor a través de soluciones
-			digitales innovadoras.
-		</p>
-		<p class="text-neutral-600 dark:text-neutral-300">
-			Disfruto explorando nuevas tecnologías, perfeccionando mis habilidades y afrontando nuevos
-			retos que me permitan seguir creciendo como desarrollador. Mi objetivo es crear productos
-			web que no solo funcionen bien, sino que también transmitan una identidad visual sólida y memorable.
-		</p>
+		<p class="text-2xl font-semibold text-neutral-800 mb-10 text-center md:text-left">{t.about.text1}</p>
+		<p class="text-neutral-600 dark:text-neutral-300">{t.about.text2}</p>
+		<p class="text-neutral-600 dark:text-neutral-300">{t.about.text3}</p>
 	</div>
 	<!-- Consola sobre mi -->
 	<div class="bg-[#1e1e1e] rounded-xl shadow-xl w-full md:min-w-90 hover:scale-105 transition">
-		<div class="flex items-center h-9 px-4 bg-[#2d2d2d] rounded-t-xl">
-			<div class="flex gap-1">
-				<div class="size-3 rounded-full bg-[#ff5f56]"></div>
-				<div class="size-3 rounded-full bg-[#ffbd2e]"></div>
-				<div class="size-3 rounded-full bg-[#27c93f]"></div>
+		<div class="relative flex items-center h-9 px-4 bg-[#2d2d2d] rounded-t-xl">
+			<div class="flex gap-1.5 group/cmf">
+				<!-- Close -->
+				<div class="size-3 rounded-full bg-[#ff5f56] flex items-center justify-center">
+					<svg class="size-2 opacity-0 group-hover/cmf:opacity-100 transition-opacity" viewBox="0 0 12 12" fill="none" stroke="#4d0000" stroke-width="1.8" stroke-linecap="round">
+						<path d="M3 3 L9 9 M9 3 L3 9" />
+					</svg>
+				</div>
+				<!-- Minimize -->
+				<div class="size-3 rounded-full bg-[#ffbd2e] flex items-center justify-center">
+					<svg class="size-2 opacity-0 group-hover/cmf:opacity-100 transition-opacity" viewBox="0 0 12 12" fill="none" stroke="#995700" stroke-width="1.8" stroke-linecap="round">
+						<path d="M2.5 6 H9.5" />
+					</svg>
+				</div>
+				<!-- Fullscreen -->
+				<div class="size-3 rounded-full bg-[#27c93f] flex items-center justify-center">
+					<svg class="size-2 opacity-0 group-hover/cmf:opacity-100 transition-opacity" viewBox="0 0 12 12" fill="none" stroke="#006500" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+						<path d="M4.5 2.5 H2.5 V4.5 M7.5 2.5 H9.5 V4.5 M2.5 7.5 V9.5 H4.5 M9.5 7.5 V9.5 H7.5" />
+					</svg>
+				</div>
 			</div>
-			<div class="flex w-full justify-center items-center">
+			<div class="absolute left-1/2 -translate-x-1/2">
 				<span class="text-slate-200 text-sm">about-me.js</span>
 			</div>
 		</div>
@@ -39,9 +49,50 @@
 				<span>name: <span class="text-(--primary-color-dark)">"Unai Cadenas"</span>,</span>
 				<span>role: <span class="text-(--primary-color-dark)">"Web Developer"</span>,</span>
 				<span>focus: [<span class="text-(--primary-color-dark)">"Frontend", "Backend", "UI/UX"</span>],</span>
-				<span>coffee: <span class="text-amber-600 italic">true</span></span>
+				<span>coffee: <span class="text-amber-600 italic typing">true</span></span>
 			</div>
 			<span>&#125;;</span>
 		</div>
 	</div>
 </article>
+
+<style>
+
+	.typing {
+		display: inline-block;
+		font-family: monospace;
+		white-space: nowrap;
+		border-right: 2px solid white;
+		width: 4ch;
+		vertical-align: bottom;
+		animation: typing 8s steps(4, end) infinite, blink 0.7s step-end infinite;
+		overflow: hidden;
+	}
+
+	@keyframes typing {
+		0%, 10% {
+			width: 0;
+		}
+		40%, 65% {
+			width: 4ch;
+		}
+		90%, 100% {
+			width: 0;
+		}
+	}
+
+	@keyframes blink {
+		50% {
+			border-color: transparent;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.typing {
+			animation: none;
+			width: 4ch;
+			border-right: none;
+		}
+	}
+
+</style>

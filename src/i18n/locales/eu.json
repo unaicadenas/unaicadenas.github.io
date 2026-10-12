@@ -9,11 +9,14 @@
     "hero": {
         "greeting": "Kaixo,",
         "role": "Full stack web eta app garatzailea",
-        "description": "Interfaze moderno, sinple eta funtzionalak sortzea gustatzen zait.",
+        "description": "Espezializatuta nago proiektu bakoitzaren beharretara egokitutako webgune eta aplikazio moderno eta optimizatuak sortzen.",
         "button": "Ikusi proiektuak"
     },
     "about": {
-        "title": "Niri buruz"
+        "title": "Niri buruz",
+        "text1": "Web garatzailea naiz, esperientzia digital moderno, funtzional eta bisualki erakargarriak sortzeko grina dudana.",
+        "text2": "Garapena eta diseinua uztartzea gustatzen zait, erabiltzaile bakoitzaren beharretara egokitutako interfaze garbiak, dinamikoak eta erabilerrazak sortzeko. Sormena nire lanaren funtsezko atala da; izan ere, beti bilatzen ditut arazoak konpontzeko eta irtenbide digital berritzaileen bidez balioa emateko modu berriak.",
+        "text3": "Teknologia berriak aztertzea, nire gaitasunak hobetzea eta garatzaile gisa hazten jarraitzeko aukera ematen didaten erronka berriei aurre egitea gustatzen zait. Nire helburua web-produktuak sortzea da, ondo funtzionatzeaz gain, nortasun bisual sendoa eta gogoangarria ere transmititzen dutenak."
     },
     "footer": {
         "text": "Unai Cadenasek garatutako portfolioa. Eskubide guztiak erreserbatuta."
