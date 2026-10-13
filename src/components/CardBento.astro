@@ -5,10 +5,10 @@ const { className, title } = Astro.props;
 <div class={`${className ?? ""} border rounded-2xl px-6 pt-4 pb-6 backdrop-blur-sm transition-all duration-300 flex flex-col justify-between min-h-40 shadow-md
             bg-slate-50 dark:bg-white/5 border-slate-200 dark:border-white/10
             hover:scale-102`}>
-    <h3 class="text-[44px] font-extrabold text-transparent [-webkit-text-stroke:1.5px_#CAD5E2] dark:[-webkit-text-stroke:1.5px_#12a66a] mb-6">
+    <h3 class="text-[40px] text-center font-extrabold text-transparent [-webkit-text-stroke:1.5px_#9ca3af] dark:[-webkit-text-stroke:1.5px_#12a66a] mb-6">
         {title}
     </h3>
-    <div class="flex flex-wrap gap-4 text-4xl text-gray-300">
+    <div class="flex flex-wrap items-center justify-center gap-4 text-4xl text-gray-300">
         <slot />
     </div>
 </div>

@@ -1,19 +1,26 @@
 ---
 import ExperienceSection from "@/components/ExperienceSection.astro";
 
+import { ui, type Lang } from '@/i18n/ui';
+interface Props {
+    lang: Lang;
+}
+const { lang } = Astro.props;
+const t = ui[lang];
+
 const Experiencias = [
     {
-        title: "Técnico Helpdesk",
-        company: "Ibermática / Ayesa",
-        description: "Resolución y seguimiento de incidencias en cajeros automáticos, diagnóstico de problemas y coordinación con equipos especializados para asegurar la disponibilidad de la infraestructura.",
-        date: "Octubre 2023 - Actualidad",
+        title: t.experience.card1.job,
+        company: t.experience.card1.company,
+        description: t.experience.card1.description,
+        date: t.experience.card1.start + " - " + t.experience.card1.end,
         current: true,
     },
     {
-        title: "Prácticas Dual",
-        company: "Ibermática / Ayesa",
-        description: "Soporte técnico a farmacias, resolviendo incidencias relacionadas con la receta electrónica y asegurando el correcto funcionamiento del servicio.",
-        date: "Junio 2018 - Junio 2019",
+        title: t.experience.card2.job,
+        company: t.experience.card2.company,
+        description: t.experience.card2.description,
+        date: t.experience.card2.start + " - " + t.experience.card2.end,
     },
 ]
 ---

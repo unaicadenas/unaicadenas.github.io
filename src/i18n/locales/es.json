@@ -18,6 +18,31 @@
         "text2": "Me gusta combinar desarrollo y diseño para construir interfaces limpias, dinámicas y adaptadas a las necesidades de cada usuario. La creatividad es una parte fundamental de mi trabajo, ya que siempre busco nuevas formas de resolver problemas y aportar valor a través de soluciones digitales innovadoras.",
         "text3": "Disfruto explorando nuevas tecnologías, perfeccionando mis habilidades y afrontando nuevos retos que me permitan seguir creciendo como desarrollador. Mi objetivo es crear productos web que no solo funcionen bien, sino que también transmitan una identidad visual sólida y memorable."
     },
+    "experience": {
+        "title": "Experiencia Laboral",
+        "card1": {
+            "start": "Octubre 2023",
+            "end": "Actualidad",
+            "job": "Técnico Helpdesk",
+            "company": "Ayesa",
+            "description": "Resolución y seguimiento de incidencias en cajeros automáticos, diagnóstico de problemas y coordinación con equipos especializados para asegurar la disponibilidad de la infraestructura."
+        },
+        "card2": {
+            "start": "Junio 2018",
+            "end": "Junio 2019",
+            "job": "Prácticas Dual",
+            "company": "Ibermática",
+            "description": "Soporte técnico a farmacias, resolviendo incidencias relacionadas con la receta electrónica y asegurando el correcto funcionamiento del servicio."
+        }
+    },
+    "stack": {
+        "title": "Stack Tecnológico",
+        "card1": "Frontend",
+        "card2": "Backend",
+        "card3": "Base de datos",
+        "card4": "Herramientas",
+        "card5": "Diseño"
+    },
     "footer": {
         "text": "Portfolio desarrollado por Unai Cadenas. Todos los derechos reservados."
     }

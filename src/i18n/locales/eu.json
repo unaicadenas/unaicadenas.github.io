@@ -18,6 +18,31 @@
         "text2": "Garapena eta diseinua uztartzea gustatzen zait, erabiltzaile bakoitzaren beharretara egokitutako interfaze garbiak, dinamikoak eta erabilerrazak sortzeko. Sormena nire lanaren funtsezko atala da; izan ere, beti bilatzen ditut arazoak konpontzeko eta irtenbide digital berritzaileen bidez balioa emateko modu berriak.",
         "text3": "Teknologia berriak aztertzea, nire gaitasunak hobetzea eta garatzaile gisa hazten jarraitzeko aukera ematen didaten erronka berriei aurre egitea gustatzen zait. Nire helburua web-produktuak sortzea da, ondo funtzionatzeaz gain, nortasun bisual sendoa eta gogoangarria ere transmititzen dutenak."
     },
+    "experience": {
+        "title": "Lan Esperientzia",
+        "card1": {
+            "start": "Urria 2023",
+            "end": "Gaurkotasuna",
+            "job": "Helpdesk teknikaria",
+            "company": "Ayesa",
+            "description": "Kutxazain automatikoetako gorabeheren ebazpena eta jarraipena, arazoen diagnostikoa eta talde espezializatuekin koordinazioa, azpiegituraren erabilgarritasuna bermatzeko."
+        },
+        "card2": {
+            "start": "Ekaina 2018",
+            "end": "Ekaina 2019",
+            "job": "Dual praktikak",
+            "company": "Ibermática",
+            "description": "Farmaziei laguntza teknikoa ematea, errezeta elektronikoarekin lotutako gorabeherak konponduz eta zerbitzuaren funtzionamendu egokia bermatuz."
+        }
+    },
+    "stack": {
+        "title": "Stack Teknologikoa",
+        "card1": "Frontend",
+        "card2": "Backend",
+        "card3": "Datu basea",
+        "card4": "Tresnak",
+        "card5": "Diseinua"
+    },
     "footer": {
         "text": "Unai Cadenasek garatutako portfolioa. Eskubide guztiak erreserbatuta."
     }

@@ -1,12 +1,21 @@
 ---
 import CardBento from "@/components/CardBento.astro";
+
+import { ui, type Lang } from '@/i18n/ui';
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = ui[lang];
 ---
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 <div class="grid grid-cols-1 md:grid-cols-6 gap-4">
 
-	<CardBento className="md:col-span-3" title="Frontend">
+	<CardBento className="md:col-span-3" title={t.stack.card1}>
 		<i class="devicon-html5-plain colored transition-transform hover:scale-110" title="HTML5"></i>
         <i class="devicon-css3-plain colored transition-transform hover:scale-110" title="CSS3"></i>
         <i class="devicon-javascript-plain colored transition-transform hover:scale-110" title="JavaScript"></i>
@@ -16,25 +25,25 @@ import CardBento from "@/components/CardBento.astro";
         <i class="devicon-tailwindcss-plain colored transition-transform hover:scale-110" title="Tailwind CSS"></i>
 	</CardBento>
 
-	<CardBento className="md:col-span-3" title="Backend">
+	<CardBento className="md:col-span-3" title={t.stack.card2}>
 		<i class="devicon-nodejs-plain colored transition-transform hover:scale-110" title="Node.js"></i>
 		<i class="devicon-python-plain colored transition-transform hover:scale-110" title="Python"></i>
 		<i class="devicon-java-plain colored transition-transform hover:scale-110" title="Java"></i>
 	</CardBento>
 
-	<CardBento className="md:col-span-2" title="Base de Datos">
+	<CardBento className="md:col-span-2" title={t.stack.card3}>
 		<i class="devicon-mysql-plain colored transition-transform hover:scale-110" title="MySQL"></i>
 		<i class="devicon-postgresql-plain colored transition-transform hover:scale-110" title="PostgreSQL"></i>
 		<i class="devicon-mongodb-plain colored transition-transform hover:scale-110" title="MongoDB"></i>
 	</CardBento>
 
-	<CardBento className="md:col-span-2" title="Herramientas">
+	<CardBento className="md:col-span-2" title={t.stack.card4}>
 		<i class="devicon-git-plain colored transition-transform hover:scale-110" title="Git"></i>
 		<i class="devicon-github-original transition-transform hover:scale-110" title="GitHub"></i>
 		<i class="devicon-docker-plain colored transition-transform hover:scale-110" title="Docker"></i>
 	</CardBento>
 
-	<CardBento className="md:col-span-2" title="Diseño">
+	<CardBento className="md:col-span-2" title={t.stack.card5}>
 		<i class="devicon-photoshop-plain colored transition-transform hover:scale-110" title="Photoshop"></i>
 		<i class="devicon-canva-plain colored transition-transform hover:scale-110" title="Canva"></i>
 		<i class="devicon-figma-plain colored transition-transform hover:scale-110" title="Figma"></i>
