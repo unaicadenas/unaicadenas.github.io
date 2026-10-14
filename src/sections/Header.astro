@@ -41,10 +41,36 @@ const t = ui[lang];
         <div class="relative w-40 h-40 md:w-full md:h-full">
             <div class="absolute w-full h-full -z-10 bg-[#97A6FF] opacity-80 blur-lg md:opacity-40 md:blur-3xl rounded-full md:rounded-none"></div>
             <img
-                class="w-full h-full z-10 object-cover object-top md:object-contain rounded-full md:rounded-none mask-[linear-gradient(to_bottom,black_40%,transparent_90%)]"
+                class="w-full h-full z-10 object-cover object-top md:object-contain rounded-full md:rounded-none
+                        mask-[linear-gradient(to_bottom,black_40%,transparent_90%)]
+                        animate-[fadeInUp_0.8s_ease-out_forwards]"
                 src="/header-image.webp"
                 alt="Imagen portfolio"
             >
         </div>
     </div>
 </div>
+
+<style>
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+</style>

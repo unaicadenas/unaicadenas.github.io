@@ -12,12 +12,12 @@ const t = ui[lang];
 <article class="flex flex-col md:flex-row justify-between items-center gap-16">
 	<!-- Texto sobre mi -->
 	<div class="text-left space-y-6">
-		<p class="text-2xl font-semibold text-neutral-800 mb-10 text-center md:text-left">{t.about.text1}</p>
+		<p class="text-2xl font-semibold text-neutral-800 dark:text-neutral-100 mb-10 text-center md:text-left">{t.about.text1}</p>
 		<p class="text-neutral-600 dark:text-neutral-300">{t.about.text2}</p>
 		<p class="text-neutral-600 dark:text-neutral-300">{t.about.text3}</p>
 	</div>
 	<!-- Consola sobre mi -->
-	<div class="bg-[#1e1e1e] rounded-xl shadow-xl w-full md:min-w-90 hover:scale-105 transition">
+	<div data-animate class="bg-[#1e1e1e] rounded-xl shadow-xl w-full md:min-w-90 hover:scale-105 opacity-0 translate-y-8 transition-all duration-700 ease-out">
 		<div class="relative flex items-center h-9 px-4 bg-[#2d2d2d] rounded-t-xl">
 			<div class="flex gap-1.5 group/cmf">
 				<!-- Close -->
@@ -96,3 +96,21 @@ const t = ui[lang];
 	}
 
 </style>
+
+<script>
+
+	const observer = new IntersectionObserver((entries) => {
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				entry.target.classList.remove('opacity-0','translate-y-8');
+				entry.target.classList.add('opacity-100','translate-y-0');
+				observer.unobserve(entry.target);
+			}
+		});
+	},{threshold: 0.15,});
+	
+	document.querySelectorAll('[data-animate]').forEach((element) => {
+		observer.observe(element);
+	});
+
+</script>
