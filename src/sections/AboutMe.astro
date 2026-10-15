@@ -17,8 +17,8 @@ const t = ui[lang];
 		<p class="text-neutral-600 dark:text-neutral-300">{t.about.text3}</p>
 	</div>
 	<!-- Consola sobre mi -->
-	<div data-animate class="bg-[#1e1e1e] rounded-xl shadow-xl w-full md:min-w-90 hover:scale-105 opacity-0 translate-y-8 transition-all duration-700 ease-out">
-		<div class="relative flex items-center h-9 px-4 bg-[#2d2d2d] rounded-t-xl">
+	<div data-animate class="bg-[#1e1e1e] dark:bg-neutral-300 rounded-xl shadow-xl w-full md:min-w-90 hover:scale-105 opacity-0 translate-y-8 transition-all duration-700 ease-out">
+		<div class="relative flex items-center h-9 px-4 bg-[#2d2d2d] dark:bg-neutral-500 rounded-t-xl">
 			<div class="flex gap-1.5 group/cmf">
 				<!-- Close -->
 				<div class="size-3 rounded-full bg-[#ff5f56] flex items-center justify-center">
@@ -43,12 +43,12 @@ const t = ui[lang];
 				<span class="text-slate-200 text-sm">about-me.js</span>
 			</div>
 		</div>
-		<div class="flex flex-col p-8 text-white text-sm">
-			<span><span class="text-blue-400">const</span> developer = &#123;</span>
+		<div class="flex flex-col p-8 text-white dark:text-slate-900 text-sm">
+			<span><span class="text-blue-400 dark:text-blue-600">const</span> developer = &#123;</span>
 			<div class="flex flex-col ml-6">
-				<span>name: <span class="text-(--primary-color-dark)">"Unai Cadenas"</span>,</span>
-				<span>role: <span class="text-(--primary-color-dark)">"Web Developer"</span>,</span>
-				<span>focus: [<span class="text-(--primary-color-dark)">"Frontend", "Backend", "UI/UX"</span>],</span>
+				<span>name: <span class="text-(--primary-color-dark) dark:text-green-600">"Unai Cadenas"</span>,</span>
+				<span>role: <span class="text-(--primary-color-dark) dark:text-green-600">"Web Developer"</span>,</span>
+				<span>focus: [<span class="text-(--primary-color-dark) dark:text-green-600">"Frontend", "Backend", "UI/UX"</span>],</span>
 				<span>coffee: <span class="text-amber-600 italic typing">true</span></span>
 			</div>
 			<span>&#125;;</span>
@@ -57,6 +57,8 @@ const t = ui[lang];
 </article>
 
 <style>
+
+	/* Animación consola typing */
 
 	.typing {
 		display: inline-block;
@@ -98,6 +100,8 @@ const t = ui[lang];
 </style>
 
 <script>
+
+	// Animación consola al recargar página */
 
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach((entry) => {
