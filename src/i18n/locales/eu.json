@@ -43,6 +43,15 @@
         "card4": "Tresnak",
         "card5": "Diseinua"
     },
+    "contact": {
+        "title": "Kontaktua",
+        "name": "Izena",
+        "lastname": "Abizena",
+        "email": "Korreoa",
+        "comment": "Iruzkina",
+        "text": "Bidali mezu elektroniko bat edo jarri nirekin harremanetan LinkedIn bidez.",
+        "button": "Bidali"
+    },
     "footer": {
         "text": "Unai Cadenasek garatutako portfolioa. Eskubide guztiak erreserbatuta."
     }

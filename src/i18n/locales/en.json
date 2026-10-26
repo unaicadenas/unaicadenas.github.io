@@ -43,6 +43,15 @@
         "card4": "Tools",
         "card5": "Design"
     },
+    "contact": {
+        "title": "Contact",
+        "name": "Name",
+        "lastname": "Last Name",
+        "email": "Email",
+        "comment": "Comment",
+        "text": "Send me an email or contact me on LinkedIn.",
+        "button": "Submit"
+    },
     "footer": {
         "text": "Portfolio developed by Unai Cadenas. All rights reserved."
     }

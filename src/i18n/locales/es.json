@@ -43,6 +43,15 @@
         "card4": "Herramientas",
         "card5": "Diseño"
     },
+    "contact": {
+        "title": "Contacto",
+        "name": "Nombre",
+        "lastname": "Apellido",
+        "email": "Correo",
+        "comment": "Comentario",
+        "text": "Mándame un correo o contáctame por LinkedIn.",
+        "button": "Enviar"
+    },
     "footer": {
         "text": "Portfolio desarrollado por Unai Cadenas. Todos los derechos reservados."
     }
