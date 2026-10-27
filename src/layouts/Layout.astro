@@ -2,7 +2,7 @@
 import '@/styles/global.css';
 import '@fontsource-variable/onest/wght.css';
 
-import Navbar from "@/sections/Navbar.astro";
+import Header from "@/sections/Header.astro";
 import Footer from "@/sections/Footer.astro";
 
 import type { Lang } from "@/i18n/ui";
@@ -28,7 +28,7 @@ const { title, lang } = Astro.props;
 		<div class="absolute inset-0 -z-10 h-full w-full">
 			<div class="absolute bottom-auto left-auto right-0 top-0 h-125 w-125 -translate-x-[30%] translate-y-[20%] rounded-full bg-blue-400 opacity-50 blur-[80px]"></div>
 		</div>
-		<Navbar lang={lang} />
+		<Header lang={lang} />
 		<slot />
 		<Footer lang={lang} />
 	</body>
