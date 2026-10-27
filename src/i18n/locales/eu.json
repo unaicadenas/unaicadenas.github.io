@@ -2,6 +2,11 @@
     "SEO": {
         "title": "Portfolio Unai Cadenas - Full Stack Web Garatzailea"
     },
+    "notFound": {
+        "title": "Ai! Galdu egin zara.",
+        "description": "Bilatzen ari zaren orria ez da existitzen edo jada ez dago erabilgarri.",
+        "button": "Hasierara itzuli"
+    },
     "nav": {
         "aboutme": "Niri buruz",
         "experience": "Esperientzia",

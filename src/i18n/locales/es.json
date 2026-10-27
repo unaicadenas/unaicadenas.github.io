@@ -2,6 +2,11 @@
     "SEO": {
         "title": "Portfolio Unai Cadenas - Desarrollador Web Full Stack"
     },
+    "notFound": {
+        "title": "¡Vaya! Te has perdido.",
+        "description": "La página que buscas no existe o ya no está disponible.",
+        "button": "Volver al inicio"
+    },
     "nav": {
         "aboutme": "Sobre mí",
         "experience": "Experiencia",

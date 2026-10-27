@@ -2,6 +2,11 @@
     "SEO": {
         "title": "Portfolio Unai Cadenas - Full Stack Web Developer"
     },
+    "notFound": {
+        "title": "Oops! You're lost.",
+        "description": "The page you're looking for doesn't exist or is no longer available.",
+        "button": "Back to home"
+    },
     "nav": {
         "aboutme": "About me",
         "experience": "Experience",

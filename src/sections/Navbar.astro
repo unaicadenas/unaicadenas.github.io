@@ -22,61 +22,63 @@ const navItems = [
 ]
 ---
 
-<header class="fixed w-full z-50 top-0">
-    <div class="header-nav w-full py-5 px-8 lg:px-20 shadow-lg flex items-center justify-between backdrop-blur-md bg-[#f5f8f6]/40 dark:bg-slate-900/40 text-slate-900 dark:text-slate-200">
-        <a href={lang === "es" ? "/" : `/${lang}/`} class="text-3xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ<span class="text-(--primary-color) dark:text-(--primary-color-dark)">/</span>&gt;</a>
-        <div class="flex items-center gap-6">
-            <nav class="hidden md:flex items-center gap-6 lg:gap-10">
-                {
-                    navItems.map((link) => (
-                        <a
-                            class="font-medium hover:text-(--primary-color) dark:hover:text-(--primary-color-dark) transition-colors"
-                            href={link.url}
-                        >
-                            {link.title}
-                        </a>
-                    ))
-                }
-            </nav>
-            <div class="flex items-center gap-4 md:pl-6 md:border-l md:border-gray-400/40 md:dark:border-white/10">
-                <ThemeToggle />
-                <LanguageDropdown lang={lang} />
-            </div>
-            <div class="flex md:hidden items-center">
-                <button id="menu-toggle" class="p-1 text-slate-800 dark:text-slate-200 border border-slate-800 dark:border-slate-200 rounded-lg focus:outline-none transition-colors" aria-label="Abrir menú">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
-                </button>
+<header class="h-20">
+    <nav class="fixed w-full z-50 top-0">
+        <div class="header-nav w-full py-5 px-8 lg:px-20 shadow-lg flex items-center justify-between backdrop-blur-md bg-[#f5f8f6]/40 dark:bg-slate-900/40 text-slate-900 dark:text-slate-200">
+            <a href={lang === "es" ? "/" : `/${lang}/`} class="text-3xl font-bold tracking-wider text-slate-900 dark:text-slate-200 transition-colors">&lt;UCQ<span class="text-(--primary-color) dark:text-(--primary-color-dark)">/</span>&gt;</a>
+            <div class="flex items-center gap-6">
+                <nav class="hidden md:flex items-center gap-6 lg:gap-10">
+                    {
+                        navItems.map((link) => (
+                            <a
+                                class="font-medium hover:text-(--primary-color) dark:hover:text-(--primary-color-dark) transition-colors"
+                                href={link.url}
+                            >
+                                {link.title}
+                            </a>
+                        ))
+                    }
+                </nav>
+                <div class="flex items-center gap-4 md:pl-6 md:border-l md:border-gray-400/40 md:dark:border-white/10">
+                    <ThemeToggle />
+                    <LanguageDropdown lang={lang} />
+                </div>
+                <div class="flex md:hidden items-center">
+                    <button id="menu-toggle" class="p-1 text-slate-800 dark:text-slate-200 border border-slate-800 dark:border-slate-200 rounded-lg focus:outline-none transition-colors" aria-label="Abrir menú">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div id="mobile-menu" class="fixed inset-y-0 left-0 z-50 w-full max-w-xs bg-slate-900/95 backdrop-blur-lg border-r border-slate-800 p-6 flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl">
-        <div>
-            <div class="flex items-center justify-between mb-6">
-                <span class="text-2xl font-bold tracking-wider text-white">&lt;UCQ<span class="text-(--primary-color) dark:text-(--primary-color-dark)">/</span>&gt;</span>
-                <button id="menu-close" class="p-1 text-slate-400 hover:text-white transition-colors" aria-label="Cerrar menú">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+        <div id="mobile-menu" class="fixed inset-y-0 left-0 z-50 w-full max-w-xs bg-slate-900/95 backdrop-blur-lg border-r border-slate-800 p-6 flex flex-col justify-between -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-2xl">
+            <div>
+                <div class="flex items-center justify-between mb-6">
+                    <span class="text-2xl font-bold tracking-wider text-white">&lt;UCQ<span class="text-(--primary-color) dark:text-(--primary-color-dark)">/</span>&gt;</span>
+                    <button id="menu-close" class="p-1 text-slate-400 hover:text-white transition-colors" aria-label="Cerrar menú">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+                <hr class="mb-8 text-white">
+                <nav class="flex flex-col gap-5 text-lg font-medium">
+                    {
+                        navItems.map((link) => (
+                            <a
+                                class="mobile-link text-slate-300 hover:text-white py-1 transition-colors"
+                                href={link.url}
+                            >
+                                {link.title}
+                            </a>
+                        ))
+                    }
+                </nav>
             </div>
-            <hr class="mb-8 text-white">
-            <nav class="flex flex-col gap-5 text-lg font-medium">
-                {
-                    navItems.map((link) => (
-                        <a
-                            class="mobile-link text-slate-300 hover:text-white py-1 transition-colors"
-                            href={link.url}
-                        >
-                            {link.title}
-                        </a>
-                    ))
-                }
-            </nav>
         </div>
-    </div>
-    <div id="menu-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden md:hidden opacity-0 transition-opacity duration-300"></div>
+        <div id="menu-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 hidden md:hidden opacity-0 transition-opacity duration-300"></div>
+    </nav>
 </header>
 
 <script>
