@@ -43,6 +43,10 @@
             "description": "Soporte técnico a farmacias, resolviendo incidencias relacionadas con la receta electrónica y asegurando el correcto funcionamiento del servicio."
         }
     },
+    "projects": {
+        "title": "Proyectos",
+        "empty": "Todavía no tengo proyectos, proximamente..."
+    },
     "stack": {
         "title": "Stack Tecnológico",
         "card1": "Frontend",

@@ -43,6 +43,10 @@
             "description": "Farmaziei laguntza teknikoa ematea, errezeta elektronikoarekin lotutako gorabeherak konponduz eta zerbitzuaren funtzionamendu egokia bermatuz."
         }
     },
+    "projects": {
+        "title": "Proiektuak",
+        "empty": "Oraindik ez ditut proiektuak, laster..."
+    },
     "stack": {
         "title": "Stack Teknologikoa",
         "card1": "Frontend",

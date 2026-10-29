@@ -43,6 +43,10 @@
             "description": "Technical support for pharmacies, resolving issues related to electronic prescriptions and ensuring the proper functioning of the service."
         }
     },
+    "projects": {
+        "title": "Projects",
+        "empty": "No projects yet, coming soon..."
+    },
     "stack": {
         "title": "Technology Stack",
         "card1": "Frontend",
