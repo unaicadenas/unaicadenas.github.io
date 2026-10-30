@@ -1,15 +1,36 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+
+import es from "@/i18n/locales/es.json";
+import eu from "@/i18n/locales/eu.json";
+import en from "@/i18n/locales/en.json";
+
+const pathname = Astro.url.pathname;
+
+const lang = pathname.startsWith("/eu")
+  ? "eu"
+  : pathname.startsWith("/en")
+    ? "en"
+    : "es";
+
+const translations = {
+  es,
+  eu,
+  en
+};
+
+const t = translations[lang];
+const homeUrl = lang === "es" ? "/" : `/${lang}/`;
 ---
 
-<Layout lang="es" title="404 | Página no encontrada">
+<Layout lang={lang} title="404 | Página no encontrada">
     <main class="h-full">
         <section class="h-full flex flex-col justify-center items-center text-center">
             <h1 class="text-8xl font-bold text-(--primary-color) dark:text-(--primary-color-dark) mb-4">404</h1>
-            <h2 class="text-2xl font-semibold sm:text-6xl mb-8">¡Vaya! Te has perdido.</h2>
-            <p class="text-gray-600 dark:text-gray-400 mb-8">La página que buscas no existe o ya no está disponible.</p>
+            <h2 class="text-2xl font-semibold sm:text-6xl mb-8">{t.notFound.title}</h2>
+            <p class="text-gray-600 dark:text-gray-400 mb-8">{t.notFound.description}</p>
             <a
-                href="/"
+                href={homeUrl}
                 class="inline-flex items-center gap-2 rounded-full border-2 border-(--primary-color) dark:border-(--primary-color-dark) text-(--primary-color) dark:text-(--primary-color-dark) px-6 py-3 font-medium shadow-lg transition hover:scale-105 hover:shadow-xl"
             >
                 <svg
@@ -26,7 +47,7 @@ import Layout from '@/layouts/Layout.astro';
                     <path d="m12 19-7-7 7-7" />
                     <path d="M19 12H5" />
                 </svg>
-                <span>Volver al inicio</span>
+                <span>{t.notFound.button}</span>
             </a>
         </section>
     </main>
