@@ -1,0 +1,70 @@
+{
+    "SEO": {
+        "title": "Portfolio Unai Cadenas - Desenvolupador Web Full Stack"
+    },
+    "notFound": {
+        "title": "Vaja! T'has perdut.",
+        "description": "La pàgina que busques no existeix o ja no està disponible.",
+        "button": "Tornar a l'inici"
+    },
+    "nav": {
+        "aboutme": "Sobre mi",
+        "experience": "Experiència",
+        "projects": "Projectes",
+        "stack": "Stack",
+        "contact": "Contacte"
+    },
+    "hero": {
+        "greeting": "Ei, soc",
+        "role": "Desenvolupador web i d'aplicacions Full Stack",
+        "description": "Especialitzat en crear llocs web i aplicacions modernes, optimitzades i adaptades a les necessitats de cada projecte.",
+        "button": "Veure projectes"
+    },
+    "about": {
+        "title": "Sobre mi",
+        "text1": "Soc desenvolupador web apassionat per crear experiències digitals modernes, funcionals i visualment atractives.",
+        "text2": "M'agrada combinar desenvolupament i disseny per construir interfícies netes, dinàmiques i adaptades a les necessitats de cada usuari. La creativitat és una part fonamental de la meva feina, ja que sempre busco noves maneres de resoldre problemes i aportar valor a través de solucions digitals innovadores.",
+        "text3": "Gaudeixo explorant noves tecnologies, perfeccionant les meves habilitats i afrontant nous reptes que em permetin continuar creixent com a desenvolupador. El meu objectiu és crear productes web que no només funcionin bé, sinó que també transmetin una identitat visual sòlida i memorable."
+    },
+    "experience": {
+        "title": "Experiència laboral",
+        "card1": {
+            "start": "Octubre 2023",
+            "end": "Actualitat",
+            "job": "Tècnic Helpdesk",
+            "company": "Ayesa",
+            "description": "Resolució i seguiment d'incidències en caixers automàtics, diagnòstic de problemes i coordinació amb equips especialitzats per garantir la disponibilitat de la infraestructura."
+        },
+        "card2": {
+            "start": "Juny 2018",
+            "end": "Juny 2019",
+            "job": "Pràctiques duals",
+            "company": "Ibermática",
+            "description": "Suport tècnic a farmàcies, resolent incidències relacionades amb la recepta electrònica i garantint el funcionament correcte del servei."
+        }
+    },
+    "projects": {
+        "title": "Projectes",
+        "empty": "Encara no tinc projectes, pròximament..."
+    },
+    "stack": {
+        "title": "Stack tecnològic",
+        "card1": "Frontend",
+        "card2": "Backend",
+        "card3": "Base de dades",
+        "card4": "Eines",
+        "card5": "Disseny"
+    },
+    "contact": {
+        "title": "Contacte",
+        "name": "Nom",
+        "lastname": "Cognom",
+        "email": "Correu electrònic",
+        "comment": "Comentari",
+        "text": "Envia'm un correu o contacta amb mi a través de LinkedIn.",
+        "button": "Enviar"
+    },
+    "footer": {
+        "text": "Portfolio desenvolupat per Unai Cadenas. Tots els drets reservats."
+    }
+}

@@ -1,6 +1,7 @@
 ---
 import esFlag from "@/assets/flags/es.svg";
 import euFlag from "@/assets/flags/eu.svg";
+import caFlag from "@/assets/flags/ca.svg";
 import enFlag from "@/assets/flags/en.svg";
 
 import type { Lang } from "@/i18n/ui";
@@ -14,6 +15,7 @@ const { lang } = Astro.props;
 const languages = [
     { code: 'es', name: 'Español', flag: esFlag.src, href: '/' },
     { code: 'eu', name: 'Euskera', flag: euFlag.src, href: '/eu' },
+    { code: 'ca', name: 'Catalán', flag: caFlag.src, href: '/ca' },
     { code: 'en', name: 'English', flag: enFlag.src, href: '/en' }
 ];
 

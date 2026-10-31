@@ -1,16 +1,19 @@
 import es from './locales/es.json';
 import eu from './locales/eu.json';
+import ca from './locales/ca.json';
 import en from './locales/en.json';
 
 export const languages = {
     es: 'Español',
     eu: 'Euskera',
+    ca: 'Catalán',
     en: 'English',
 } as const;
 
 export const ui = {
     es,
     eu,
+    ca,
     en,
 } as const;
 
